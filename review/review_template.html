@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Вичитка рецептів</title>
+<style>
+:root{--bg:#f6f2ea;--panel:#fffdf8;--ink:#2b2621;--mute:#7a7065;--line:#e4dccf;--accent:#9a5b2e;--hl:#fff1c9;--ok:#3f7d4e;--warn:#b0463a;--done:#e8f1ea}
+@media (prefers-color-scheme:dark){:root{--bg:#1d1b18;--panel:#26231f;--ink:#ece6dc;--mute:#a1978a;--line:#3a352f;--accent:#e0a36f;--hl:#4a3f22;--ok:#7fc28f;--warn:#e5877b;--done:#23332a}}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+header{display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:8px 14px;border-bottom:1px solid var(--line);background:var(--panel)}
+header h1{font-size:16px;margin:0 8px 0 0}
+.prog{flex:1;min-width:160px;height:8px;background:var(--line);border-radius:4px;overflow:hidden}
+.prog i{display:block;height:100%;background:var(--ok);width:0}
+button,.btn{font:inherit;border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:5px 10px;border-radius:6px;cursor:pointer}
+button:hover,.btn:hover{border-color:var(--accent)}
+button.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+main{display:grid;grid-template-columns:230px 1fr 430px;height:calc(100% - 50px)}
+nav{overflow:auto;border-right:1px solid var(--line);background:var(--panel);font-size:13px}
+nav .cat{padding:8px 10px 2px;font-weight:600;color:var(--mute);text-transform:uppercase;font-size:11px}
+nav a{display:flex;justify-content:space-between;gap:6px;padding:4px 10px;color:var(--ink);text-decoration:none;cursor:pointer}
+nav a.cur{background:var(--hl)}
+nav a.done{color:var(--mute)}
+nav a small{color:var(--mute);white-space:nowrap}
+#viewer{position:relative;overflow:hidden;background:#111;cursor:grab}
+#viewer.drag{cursor:grabbing}
+#viewer img{position:absolute;top:0;left:0;transform-origin:0 0;user-select:none;-webkit-user-drag:none;max-width:none}
+#vtools{position:absolute;top:8px;left:8px;display:flex;gap:6px;z-index:2;flex-wrap:wrap}
+#vtools button{background:rgba(0,0,0,.6);color:#fff;border-color:#555}
+#vtools button.on{border-color:#e0a36f;color:#e0a36f}
+#nophoto{position:absolute;inset:0;display:none;align-items:center;justify-content:center;flex-direction:column;gap:10px;color:#ddd;text-align:center;padding:20px}
+aside{overflow:auto;background:var(--panel);border-left:1px solid var(--line);padding:12px 14px}
+aside h2{font-size:17px;margin:0 0 2px}
+.meta{color:var(--mute);font-size:12px;margin-bottom:10px}
+.card{border:2px solid var(--accent);border-radius:8px;padding:10px;margin:10px 0}
+.card .hint{color:var(--warn);font-size:13px}
+.card code,.body code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px}
+.card .cur{background:var(--hl);padding:4px 6px;border-radius:4px;margin:6px 0;display:block;white-space:pre-wrap;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px}
+.card input{width:100%;font:inherit;padding:7px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)}
+.card .row{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.sug{display:flex;gap:8px;align-items:center;justify-content:space-between;background:var(--done);border-radius:6px;padding:6px 8px;margin:6px 0;font-size:13px}
+.sug small{color:var(--mute)}
+.qlist{margin:8px 0;font-size:13px}
+.qlist div{padding:3px 6px;border-radius:4px;cursor:pointer;display:flex;gap:6px}
+.qlist div.cur{outline:1px solid var(--accent)}
+.qlist div.ans{background:var(--done)}
+.qlist b{white-space:nowrap}
+.body{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12.5px;white-space:pre-wrap;border-top:1px solid var(--line);padding-top:8px;margin-top:10px}
+.body span{display:block;padding:0 3px}
+.body span.q{background:var(--hl)}
+.body span.q.cur{outline:2px solid var(--accent)}
+.help{font-size:12px;color:var(--mute);margin-top:10px}
+kbd{border:1px solid var(--line);border-bottom-width:2px;border-radius:3px;padding:0 4px;font-size:11px}
+@media (max-width:900px){main{grid-template-columns:1fr;grid-template-rows:auto 45vh auto;height:auto}nav{max-height:25vh}#viewer{height:45vh}}
+</style>
+</head>
+<body>
+<header>
+ <h1>Вичитка рецептів</h1>
+ <span id="stat"></span>
+ <div class="prog"><i id="bar"></i></div>
+ <label class="btn">📁 Папка з фото<input id="dir" type="file" webkitdirectory multiple hidden></label>
+ <label class="btn">⤒ Імпорт JSON<input id="imp" type="file" accept=".json" hidden></label>
+ <button class="primary" id="exp">⤓ Зберегти відповіді.json</button>
+</header>
+<main>
+ <nav id="nav"></nav>
+ <div id="viewer">
+  <div id="vtools"><span id="imgtabs"></span><button id="zin">+</button><button id="zout">−</button><button id="fit">Вмістити</button><button id="rot">⟳ 90°</button></div>
+  <img id="img" alt="">
+  <div id="nophoto"><div>Фото не знайдено.<br>Поклади фото в папку <code>photos/</code> поруч із цим файлом<br>або обери папку кнопкою нижче.</div><label class="btn" style="color:#fff">📁 Обрати папку з фото<input id="dir2" type="file" webkitdirectory multiple hidden></label></div>
+ </div>
+ <aside id="side"></aside>
+</main>
+<script>
+const DATA = /*__DATA__*/[];
+const KEY = 'mama-review-answers-v1';
+const SPECIAL = {ok:'ОК', un:'НЕ ВДАЛОСЯ ПРОЧИТАТИ', del:'ВИДАЛИТИ'};
+let answers = {};
+try { answers = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch(e) {}
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(answers)); } catch(e) {} };
+const flat = []; DATA.forEach((r, ri) => r.q.forEach((q, qi) => flat.push({ri, qi})));
+let ri = 0, qi = 0, imgIdx = 0;
+const photoMap = {};
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+// ---------- навігація ----------
+function renderNav(){
+  let h = '', cat = null;
+  DATA.forEach((r, i) => {
+    if (r.category !== cat){ cat = r.category; h += `<div class="cat">${esc(cat)}</div>`; }
+    const done = r.q.filter(q => (answers[q.qid]||'').trim()).length;
+    h += `<a data-i="${i}" class="${i===ri?'cur':''} ${done===r.q.length?'done':''}"><span>${r.id}. ${esc(r.title)}</span><small>${done}/${r.q.length}</small></a>`;
+  });
+  $('nav').innerHTML = h;
+  const total = flat.length, done = flat.filter(f => (answers[DATA[f.ri].q[f.qi].qid]||'').trim()).length;
+  $('stat').textContent = `${done} / ${total}`;
+  $('bar').style.width = (100*done/total) + '%';
+  const cur = $('nav').querySelector('.cur'); if (cur) cur.scrollIntoView({block:'nearest'});
+}
+$('nav').onclick = e => { const a = e.target.closest('a'); if (a){ go(+a.dataset.i, 0); } };
+
+function go(r, q){ const newRecipe = r !== ri; ri = r; qi = q; if (newRecipe) imgIdx = 0; render(newRecipe); }
+function step(d){
+  const pos = flat.findIndex(f => f.ri===ri && f.qi===qi) + d;
+  if (pos >= 0 && pos < flat.length) go(flat[pos].ri, flat[pos].qi);
+}
+function nextOpen(){
+  const pos = flat.findIndex(f => f.ri===ri && f.qi===qi);
+  for (let k = 1; k <= flat.length; k++){
+    const f = flat[(pos+k) % flat.length];
+    if (!(answers[DATA[f.ri].q[f.qi].qid]||'').trim()) return go(f.ri, f.qi);
+  }
+  step(1);
+}
+
+// ---------- права панель ----------
+function render(newRecipe){
+  const r = DATA[ri], q = r.q[qi];
+  const qLines = new Map(r.q.map((x, i) => [x.line - r.offset - 1, i]));
+  const body = r.body.map((l, i) => {
+    const k = qLines.get(i);
+    return `<span class="${k!==undefined?'q':''} ${k===qi?'cur':''}" ${k!==undefined?`data-q="${k}"`:''}>${esc(l)||' '}</span>`;
+  }).join('');
+  const ql = r.q.map((x, i) => `<div data-q="${i}" class="${i===qi?'cur':''} ${(answers[x.qid]||'').trim()?'ans':''}"><b>${x.qid}</b><span>${esc(answers[x.qid]||x.hints.filter(Boolean).join('; ')||'нечітко')}</span></div>`).join('');
+  $('side').innerHTML = `
+   <h2>${r.id}. ${esc(r.title)}</h2>
+   <div class="meta">${r.images.map(esc).join(' · ')} · ${esc(r.file)}</div>
+   <div class="card">
+     <div><b>${q.qid}</b> · <span class="hint">${esc(q.hints.filter(Boolean).join('; ') || 'нечітко')}</span></div>
+     <span class="cur">${esc(q.current.trim() || '(порожньо)')}</span>
+     ${q.sug ? `<div class="sug"><span>${q.sug.sure ? '✅' : '⚠️'} Claude: <code>${esc(q.sug.answer)}</code>${q.sug.note ? '<br><small>' + esc(q.sug.note) + '</small>' : ''}</span><button id="acc">Прийняти <kbd>Alt+4</kbd></button></div>` : ''}
+     <input id="ans" placeholder="ОК · 1 ст. => 1 склянка · НАЗВА: … · або весь рядок" value="${esc(answers[q.qid]||'')}" autocomplete="off">
+     <div class="row">
+       <button data-s="ok">✓ ОК</button><button data-s="un">✗ Не прочитати</button><button data-s="del">🗑 Видалити</button>
+       <button data-s="clr">Очистити</button><span style="flex:1"></span>
+       <button id="prev">←</button><button class="primary" id="next">Далі →</button>
+     </div>
+   </div>
+   <div class="qlist">${ql}</div>
+   <div class="body">${body}</div>
+   <div class="help"><kbd>Enter</kbd> зберегти й до наступного відкритого · <kbd>Alt+1</kbd> ОК · <kbd>Alt+2</kbd> не прочитати · <kbd>Alt+3</kbd> видалити · <kbd>Alt+4</kbd> прийняти пропозицію Claude · <kbd>Alt+←/→</kbd> попереднє/наступне.<br>
+   <code>стара => нова</code> — заміна фрагмента (кілька через <code>;</code>). Будь-який інший текст замінює рядок повністю.<br>
+   Відповіді автозберігаються в браузері. Наприкінці: <b>Зберегти відповіді.json</b> → <code>python3 review/apply_review.py --json відповіді.json</code>.</div>`;
+  const inp = $('ans');
+  inp.oninput = () => { set(inp.value, false); };
+  inp.onkeydown = e => {
+    if (e.key === 'Enter'){ e.preventDefault(); nextOpen(); }
+  };
+  inp.focus(); inp.select();
+  $('side').querySelectorAll('[data-s]').forEach(b => b.onclick = () => {
+    const s = b.dataset.s;
+    if (s === 'clr') { set('', true); return; }
+    set(SPECIAL[s], true); nextOpen();
+  });
+  $('side').querySelectorAll('[data-q]').forEach(el => el.onclick = () => go(ri, +el.dataset.q));
+  if ($('acc')) $('acc').onclick = () => { set(q.sug.answer, true); nextOpen(); };
+  $('prev').onclick = () => step(-1); $('next').onclick = () => nextOpen();
+  renderNav();
+  if (newRecipe !== false) showImage();
+}
+function set(v, rerender){
+  const qid = DATA[ri].q[qi].qid;
+  if (v && v.trim()) answers[qid] = v; else delete answers[qid];
+  save();
+  if (rerender) render(false); else { renderNav(); const d = $('side').querySelector(`.qlist [data-q="${qi}"]`); if (d){ d.classList.toggle('ans', !!(v&&v.trim())); d.lastElementChild.textContent = v || DATA[ri].q[qi].hints.join('; '); } }
+}
+document.addEventListener('keydown', e => {
+  if (!e.altKey) return;
+  const m = {'1':'ok','2':'un','3':'del'}[e.key];
+  if (m){ e.preventDefault(); set(SPECIAL[m], true); nextOpen(); }
+  if (e.key === '4'){ const s = DATA[ri].q[qi].sug; if (s){ e.preventDefault(); set(s.answer, true); nextOpen(); } }
+  if (e.key === 'ArrowRight'){ e.preventDefault(); step(1); }
+  if (e.key === 'ArrowLeft'){ e.preventDefault(); step(-1); }
+});
+
+// ---------- фото ----------
+const img = $('img'), viewer = $('viewer');
+let z = 1, tx = 0, ty = 0, rot = 0;
+function srcFor(name){
+  const k = name.toLowerCase(), base = k.replace(/\.[^.]+$/, '');
+  return photoMap[k] || photoMap[base] || ('photos/' + name);
+}
+function showImage(){
+  const r = DATA[ri];
+  $('imgtabs').innerHTML = r.images.length > 1 ? r.images.map((n, i) => `<button class="${i===imgIdx?'on':''}" data-img="${i}">${esc(n.replace(/\.[^.]+$/, ''))}</button>`).join('') : '';
+  $('imgtabs').querySelectorAll('button').forEach(b => b.onclick = () => { imgIdx = +b.dataset.img; showImage(); });
+  const name = r.images[imgIdx];
+  $('nophoto').style.display = 'none';
+  img.style.display = '';
+  img.onerror = () => { img.style.display = 'none'; $('nophoto').style.display = 'flex'; };
+  img.onload = fit;
+  img.src = name ? srcFor(name) : '';
+}
+function apply(){ img.style.transform = `translate(${tx}px,${ty}px) scale(${z}) rotate(${rot}deg)`; }
+function fit(){
+  const vw = viewer.clientWidth, vh = viewer.clientHeight;
+  const rotated = rot % 180 !== 0;
+  const w = rotated ? img.naturalHeight : img.naturalWidth, h = rotated ? img.naturalWidth : img.naturalHeight;
+  z = Math.min(vw / w, vh / h) || 1;
+  // центр із урахуванням повороту навколо (0,0)
+  const off = {0:[0,0], 90:[w,0], 180:[w,h], 270:[0,h]}[rot];
+  tx = (vw - w*z)/2 + off[0]*z; ty = (vh - h*z)/2 + off[1]*z;
+  apply();
+}
+function zoomAt(f, cx, cy){ tx = cx - (cx - tx)*f; ty = cy - (cy - ty)*f; z *= f; apply(); }
+viewer.addEventListener('wheel', e => { e.preventDefault(); const b = viewer.getBoundingClientRect(); zoomAt(e.deltaY < 0 ? 1.15 : 1/1.15, e.clientX - b.left, e.clientY - b.top); }, {passive:false});
+let drag = null;
+viewer.addEventListener('pointerdown', e => { if (e.target.closest('#vtools,#nophoto')) return; drag = {x:e.clientX, y:e.clientY, tx, ty}; viewer.classList.add('drag'); viewer.setPointerCapture(e.pointerId); });
+viewer.addEventListener('pointermove', e => { if (!drag) return; tx = drag.tx + e.clientX - drag.x; ty = drag.ty + e.clientY - drag.y; apply(); });
+viewer.addEventListener('pointerup', () => { drag = null; viewer.classList.remove('drag'); });
+viewer.addEventListener('dblclick', e => { if (!e.target.closest('#vtools')) fit(); });
+$('zin').onclick = () => zoomAt(1.3, viewer.clientWidth/2, viewer.clientHeight/2);
+$('zout').onclick = () => zoomAt(1/1.3, viewer.clientWidth/2, viewer.clientHeight/2);
+$('fit').onclick = fit;
+$('rot').onclick = () => { rot = (rot + 90) % 360; fit(); };
+window.addEventListener('resize', fit);
+function loadDir(e){
+  for (const f of e.target.files){
+    const k = f.name.toLowerCase();
+    const url = URL.createObjectURL(f);
+    photoMap[k] = url; photoMap[k.replace(/\.[^.]+$/, '')] = url;
+  }
+  showImage();
+}
+$('dir').onchange = loadDir; $('dir2').onchange = loadDir;
+
+// ---------- імпорт/експорт ----------
+$('exp').onclick = () => {
+  const blob = new Blob([JSON.stringify(answers, null, 1)], {type:'application/json'});
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'відповіді.json'; a.click();
+};
+$('imp').onchange = async e => {
+  const f = e.target.files[0]; if (!f) return;
+  try { Object.assign(answers, JSON.parse(await f.text())); save(); render(false); } catch(err) { alert('Не вдалося прочитати JSON'); }
+};
+
+// старт: перше відкрите питання
+const first = flat.find(f => !(answers[DATA[f.ri].q[f.qi].qid]||'').trim()) || flat[0];
+if (first){ ri = first.ri; qi = first.qi; render(true); }
+</script>
+</body>
+</html>
