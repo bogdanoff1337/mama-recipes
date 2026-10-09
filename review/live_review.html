@@ -55,6 +55,15 @@ nav{display:flex;flex-direction:column;border-right:1px solid var(--line);backgr
 textarea{display:block;resize:vertical;width:100%;min-height:44px;border:1px solid #d8b786;border-radius:6px;background:#fffdf7;color:var(--ink);font:inherit;line-height:1.5;padding:6px 8px;outline:none}
 textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px #f5dfc1}
 .qtools{display:flex;align-items:center;gap:6px;margin-top:6px;flex-wrap:wrap}
+.sug{background:#fff;border:1px solid #e3cfa9;border-radius:6px;padding:8px 10px;margin-bottom:8px}
+.sug .label{font-size:12px;font-weight:600;color:var(--success);text-transform:uppercase;letter-spacing:.04em}
+.sug .label.unsure{color:var(--accent)}
+.sug .value{margin:3px 0 2px;font-weight:500}
+.sug .why{font-size:13px;color:var(--muted)}
+.sug .act{display:flex;gap:6px;margin-top:8px}
+.sug .act button{border:1px solid var(--line);background:#fff;border-radius:8px;padding:7px 12px;font-size:14px}
+.sug .act .yes{background:var(--success);border-color:var(--success);color:#fff;font-weight:600;flex:1}
+.mom{font-size:13px;color:#7a4a1f;margin-bottom:6px}
 .qtools .hint{font-size:12px;color:var(--muted);margin-right:auto}
 .qtools button{font-size:13px;border:1px solid var(--line);background:#fff;border-radius:6px;padding:4px 9px}
 .saved{color:var(--success);font-size:12px}.error{color:var(--danger);font-size:12px}
@@ -169,9 +178,16 @@ function renderBody(r){
   return out;
 }
 function showLine(q){return q.original.replace(/<!--\s*\?\?(.*?)-->/g,(_,h)=>`[${h.trim()||'?'}]`)}
+function sugView(q){
+  const a=q.sug.answer;
+  if(a.toUpperCase()==='ОК')return q.original.replace(/<!--\s*\?\?.*?-->/g,'').trim()||'(прибрати позначку)';
+  if(a.toUpperCase().startsWith('НАЗВА:'))return 'Назва рецепта: '+a.split(':').slice(1).join(':').trim();
+  return a.replace(/^\s*[-*]\s+/,'');
+}
 function questionLine(line){
   const q=line.questions[0],hints=(q.original.match(/<!--\s*\?\?(.*?)-->/g)||[]).map(h=>h.replace(/<!--\s*\?\?|-->/g,'').trim()).filter(Boolean);
-  return `<li class="q"><div class="hintline">❓ ${esc(hints.join(' · ')||'нечітке місце')}</div><textarea data-qid="${q.qid}" aria-label="${q.qid}">${esc(showLine(q))}</textarea><div class="qtools"><span class="hint">виправ текст у [дужках] або весь рядок</span><button data-answer="ОК">ОК, так і є</button><button data-answer="НЕ ВДАЛОСЯ ПРОЧИТАТИ">Не прочитати</button><button data-answer="ВИДАЛИТИ">Видалити рядок</button><span class="saved"></span></div></li>`;
+  const sug=q.sug?`<div class="sug"><div class="label ${q.sug.sure?'':'unsure'}">💡 Пропозиція${q.sug.sure?'':' (не впевнений)'}</div><div class="value">${inline(sugView(q))}</div><div class="why">${esc(q.sug.note||'')}</div><div class="act"><button class="yes" data-accept="${q.qid}">✓ Так, правильно</button><button data-reject="${q.qid}">✗ Ні</button></div></div>`:`<div class="mom">👵 Без пропозиції — тут знає тільки мама</div>`;
+  return `<li class="q"><div class="hintline">❓ ${esc(hints.join(' · ')||'нечітке місце')}</div>${sug}${q.sug?'<div class="hint" style="font-size:12px;color:var(--muted);margin:2px 0 4px">або виправ сам:</div>':''}<textarea data-qid="${q.qid}" aria-label="${q.qid}">${esc(showLine(q))}</textarea><div class="qtools"><span class="hint">виправ текст у [дужках] або весь рядок</span><button data-answer="ОК">ОК, так і є</button><button data-answer="НЕ ВДАЛОСЯ ПРОЧИТАТИ">Не прочитати</button><button data-answer="ВИДАЛИТИ">Видалити рядок</button><span class="saved"></span></div></li>`;
 }
 function render(){
   renderList();
@@ -239,7 +255,17 @@ text.addEventListener('keydown',e=>{
   }
   if(e.target.matches('textarea')&&e.key==='Enter'&&(e.ctrlKey||e.metaKey)){e.preventDefault();e.target.blur()}
 });
-text.addEventListener('click',e=>{
+text.addEventListener('click',async e=>{
+  const acc=e.target.closest('[data-accept]'),rej=e.target.closest('[data-reject]');
+  if(acc||rej){
+    const qid=(acc||rej).dataset.accept||(acc||rej).dataset.reject,box=(acc||rej).closest('.q'),status=box.querySelector('.saved');
+    const q=recipes[index].body.flatMap(l=>l.questions||[]).find(x=>x.qid===qid);
+    if(acc){box.querySelector('textarea').value=q.sug.answer;save(qid,q.sug.answer,status);return}
+    status.textContent='Збереження…';
+    try{const res=await fetch('/api/reject',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({qid})});const data=await res.json();const id=recipes[index].id;recipes=data.recipes;index=Math.max(0,recipes.findIndex(r=>r.id===id));render()}
+    catch{status.textContent='Не вдалося зберегти';status.className='error'}
+    return;
+  }
   const b=e.target.closest('[data-answer]');if(!b)return;
   const area=b.closest('.q').querySelector('textarea');area.value=b.dataset.answer;area.blur();
 });

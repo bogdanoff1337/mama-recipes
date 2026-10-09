@@ -10,7 +10,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from apply_review import update_titles
-from common import MARKER_RE, ROOT, clean_line, load_registry, parse_front, recipe_files
+from common import MARKER_RE, ROOT, SUGGEST, clean_line, load_registry, load_suggestions, parse_front, recipe_files
 
 
 PAGE = Path(__file__).with_name("live_review.html")
@@ -34,13 +34,22 @@ def set_read(recipe_id, value):
         READ_FILE.write_text(json.dumps(sorted(read), ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
 
 
+def reject_suggestion(qid):
+    with READ_LOCK:
+        suggestions = load_suggestions()
+        if qid in suggestions:
+            suggestions[qid]["rejected"] = True
+            SUGGEST.write_text(json.dumps(suggestions, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+
+
 def recipe_data():
     read = load_read()
+    suggestions = {qid: s for qid, s in load_suggestions().items() if not s.get("rejected")}
     registry = load_registry()["questions"]
     questions = {qid: q for qid, q in registry.items() if q["status"] == "open"}
     by_file = {}
     for qid, question in questions.items():
-        by_file.setdefault(question["file"], []).append({"qid": qid, **question})
+        by_file.setdefault(question["file"], []).append({"qid": qid, **question, "sug": suggestions.get(qid)})
     recipes = []
     for path in recipe_files():
         rel = path.relative_to(ROOT).as_posix()
@@ -141,12 +150,16 @@ class Handler(SimpleHTTPRequestHandler):
         super().do_GET()
 
     def do_POST(self):
-        if self.path not in ("/api/answer", "/api/title", "/api/read"):
+        if self.path not in ("/api/answer", "/api/title", "/api/read", "/api/reject"):
             self.send_error(404)
             return
         try:
             length = int(self.headers.get("Content-Length", 0))
             request = json.loads(self.rfile.read(length))
+            if self.path == "/api/reject":
+                reject_suggestion(request["qid"])
+                self.respond({"saved": True, "recipes": recipe_data()})
+                return
             if self.path == "/api/read":
                 set_read(str(request["id"]), bool(request["read"]))
                 self.respond({"saved": True})
