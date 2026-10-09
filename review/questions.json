@@ -1,5 +1,5 @@
 {
- "next": 431,
+ "next": 489,
  "questions": {
   "Q0001": {
    "file": "recipes/01-konservatsiya/ohirky/001-zelentsi-z-sousom.md",
@@ -916,7 +916,7 @@
   "Q0077": {
    "file": "recipes/01-konservatsiya/kabachky/038-kabachkovi-ananasy.md",
    "original": "- ананасовий сік / напій <!-- ?? --> — 3 л води з добавкою <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 19,
    "current": "- ананасовий сік / напій — 3 л води з добавкою",
    "hints": [
@@ -929,7 +929,7 @@
   "Q0078": {
    "file": "recipes/01-konservatsiya/kabachky/038-kabachkovi-ananasy.md",
    "original": "- цукор — 1 кг <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 20,
    "current": "- цукор — 1 кг",
    "hints": [
@@ -1001,7 +1001,7 @@
   "Q0084": {
    "file": "recipes/01-konservatsiya/kabachky/041-ikra-z-kabachkiv-variant.md",
    "original": "- майонез — 1 л <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 18,
    "current": "- майонез — 1 л",
    "hints": [
@@ -1013,7 +1013,7 @@
   "Q0085": {
    "file": "recipes/01-konservatsiya/kabachky/041-ikra-z-kabachkiv-variant.md",
    "original": "- олія — 100 г <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 21,
    "current": "- олія — 100 г",
    "hints": [
@@ -1025,7 +1025,7 @@
   "Q0086": {
    "file": "recipes/01-konservatsiya/kabachky/041-ikra-z-kabachkiv-variant.md",
    "original": "- оцет — 100 г <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 22,
    "current": "- оцет — 100 г",
    "hints": [
@@ -1399,7 +1399,7 @@
   "Q0117": {
    "file": "recipes/02-salaty/ovochevi-salaty/060-salat-iz-kapusty.md",
    "original": "- сіль — 200 г <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 20,
    "current": "- сіль — 200 г",
    "hints": [
@@ -1411,7 +1411,7 @@
   "Q0118": {
    "file": "recipes/02-salaty/ovochevi-salaty/060-salat-iz-kapusty.md",
    "original": "Кількість капусти та моркви в записі нечітка. <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 29,
    "current": "Кількість капусти та моркви в записі нечітка.",
    "hints": [
@@ -1423,7 +1423,7 @@
   "Q0119": {
    "file": "recipes/02-salaty/zmishani-salaty/061-salat-vinnytskyy.md",
    "original": "- печінка <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 20,
    "current": "- печінка",
    "hints": [
@@ -1555,7 +1555,7 @@
   "Q0130": {
    "file": "recipes/02-salaty/zmishani-salaty/066-salat-iz-sukhariv.md",
    "original": "- яйця варені <!-- ?? кількість -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 19,
    "current": "- яйця варені",
    "hints": [
@@ -1591,7 +1591,7 @@
   "Q0133": {
    "file": "recipes/02-salaty/zmishani-salaty/066-salat-iz-sukhariv.md",
    "original": "- сирки — 10? <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 22,
    "current": "- сирки — 10?",
    "hints": [
@@ -2083,7 +2083,7 @@
   "Q0174": {
    "file": "recipes/02-salaty/moreprodukty/084-salat-morskaya-zahadka.md",
    "original": "- кальмари / морепродукти <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 19,
    "current": "- кальмари / морепродукти",
    "hints": [
@@ -2095,7 +2095,7 @@
   "Q0175": {
    "file": "recipes/02-salaty/moreprodukty/084-salat-morskaya-zahadka.md",
    "original": "- яйця <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 20,
    "current": "- яйця",
    "hints": [
@@ -2107,7 +2107,7 @@
   "Q0176": {
    "file": "recipes/02-salaty/moreprodukty/084-salat-morskaya-zahadka.md",
    "original": "- огірки <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 21,
    "current": "- огірки",
    "hints": [
@@ -2527,7 +2527,7 @@
   "Q0211": {
    "file": "recipes/05-zakusky/syrni-zakusky/099-syr-halatskyy.md",
    "original": "- сир — 200 г <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 20,
    "current": "- сир — 200 г",
    "hints": [
@@ -2551,7 +2551,7 @@
   "Q0213": {
    "file": "recipes/05-zakusky/syrni-zakusky/100-syrna-masa-plavlenyy-syr.md",
    "original": "- сир — 1 кг <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 19,
    "current": "- сир — 1 кг",
    "hints": [
@@ -2791,7 +2791,7 @@
   "Q0233": {
    "file": "recipes/07-vypichka/torty/106-medovyk.md",
    "original": "- цукор — <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 17,
    "current": "- цукор —",
    "hints": [
@@ -2803,7 +2803,7 @@
   "Q0234": {
    "file": "recipes/07-vypichka/torty/106-medovyk.md",
    "original": "- мед — <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 18,
    "current": "- мед —",
    "hints": [
@@ -2815,7 +2815,7 @@
   "Q0235": {
    "file": "recipes/07-vypichka/torty/106-medovyk.md",
    "original": "- яйця — <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 19,
    "current": "- яйця —",
    "hints": [
@@ -2827,7 +2827,7 @@
   "Q0236": {
    "file": "recipes/07-vypichka/torty/106-medovyk.md",
    "original": "- мука — <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 20,
    "current": "- мука —",
    "hints": [
@@ -2839,7 +2839,7 @@
   "Q0237": {
    "file": "recipes/07-vypichka/torty/106-medovyk.md",
    "original": "- сода — <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 21,
    "current": "- сода —",
    "hints": [
@@ -2971,7 +2971,7 @@
   "Q0248": {
    "file": "recipes/07-vypichka/torty/109-tort-kremovyy-desert.md",
    "original": "- масло — <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 20,
    "current": "- масло —",
    "hints": [
@@ -2983,7 +2983,7 @@
   "Q0249": {
    "file": "recipes/07-vypichka/torty/109-tort-kremovyy-desert.md",
    "original": "- сметана — <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 21,
    "current": "- сметана —",
    "hints": [
@@ -3259,7 +3259,7 @@
   "Q0272": {
    "file": "recipes/07-vypichka/torty/115-tort-iz-syrom.md",
    "original": "- яйця — 4 шт. <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 18,
    "current": "- яйця — 4 шт.",
    "hints": [
@@ -3271,7 +3271,7 @@
   "Q0273": {
    "file": "recipes/07-vypichka/torty/115-tort-iz-syrom.md",
    "original": "- мука — <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 20,
    "current": "- мука —",
    "hints": [
@@ -3283,7 +3283,7 @@
   "Q0274": {
    "file": "recipes/07-vypichka/torty/115-tort-iz-syrom.md",
    "original": "- сир — <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 21,
    "current": "- сир —",
    "hints": [
@@ -3295,7 +3295,7 @@
   "Q0275": {
    "file": "recipes/07-vypichka/torty/115-tort-iz-syrom.md",
    "original": "- згущене молоко <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 25,
    "current": "- згущене молоко",
    "hints": [
@@ -3331,7 +3331,7 @@
   "Q0278": {
    "file": "recipes/07-vypichka/pyrohy-ta-keksy/118-pyrih-palychky.md",
    "original": "- мука — <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 19,
    "current": "- мука —",
    "hints": [
@@ -3343,7 +3343,7 @@
   "Q0279": {
    "file": "recipes/07-vypichka/pyrohy-ta-keksy/118-pyrih-palychky.md",
    "original": "- маргарин — <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 20,
    "current": "- маргарин —",
    "hints": [
@@ -3355,7 +3355,7 @@
   "Q0280": {
    "file": "recipes/07-vypichka/pyrohy-ta-keksy/118-pyrih-palychky.md",
    "original": "Запис блідий. <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 22,
    "current": "Запис блідий.",
    "hints": [
@@ -3367,7 +3367,7 @@
   "Q0281": {
    "file": "recipes/07-vypichka/pyrohy-ta-keksy/119-pyrih-tertyy.md",
    "original": "- яйця — 3 шт. <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 19,
    "current": "- яйця — 3 шт.",
    "hints": [
@@ -3379,7 +3379,7 @@
   "Q0282": {
    "file": "recipes/07-vypichka/pyrohy-ta-keksy/119-pyrih-tertyy.md",
    "original": "- мука — <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 20,
    "current": "- мука —",
    "hints": [
@@ -3391,7 +3391,7 @@
   "Q0283": {
    "file": "recipes/07-vypichka/pyrohy-ta-keksy/119-pyrih-tertyy.md",
    "original": "- сода — <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 21,
    "current": "- сода —",
    "hints": [
@@ -3403,7 +3403,7 @@
   "Q0284": {
    "file": "recipes/07-vypichka/pyrohy-ta-keksy/119-pyrih-tertyy.md",
    "original": "Частину тіста охолодити / заморозити, потім натерти поверх начинки. <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 24,
    "current": "Частину тіста охолодити / заморозити, потім натерти поверх начинки.",
    "hints": [
@@ -3475,7 +3475,7 @@
   "Q0290": {
    "file": "recipes/07-vypichka/pyrohy-ta-keksy/122-tort-pyrih-iz-yablukamy.md",
    "original": "- яйця — <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 17,
    "current": "- яйця —",
    "hints": [
@@ -3487,7 +3487,7 @@
   "Q0291": {
    "file": "recipes/07-vypichka/pyrohy-ta-keksy/122-tort-pyrih-iz-yablukamy.md",
    "original": "- цукор — <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 18,
    "current": "- цукор —",
    "hints": [
@@ -3499,7 +3499,7 @@
   "Q0292": {
    "file": "recipes/07-vypichka/pyrohy-ta-keksy/122-tort-pyrih-iz-yablukamy.md",
    "original": "- яблука — <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 19,
    "current": "- яблука —",
    "hints": [
@@ -3511,7 +3511,7 @@
   "Q0293": {
    "file": "recipes/07-vypichka/pyrohy-ta-keksy/122-tort-pyrih-iz-yablukamy.md",
    "original": "- мука — <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 20,
    "current": "- мука —",
    "hints": [
@@ -3535,7 +3535,7 @@
   "Q0295": {
    "file": "recipes/07-vypichka/pyrohy-ta-keksy/123-tuz-i-hrakh.md",
    "original": "- яйця — 2 шт. <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 17,
    "current": "- яйця — 2 шт.",
    "hints": [
@@ -3559,7 +3559,7 @@
   "Q0297": {
    "file": "recipes/07-vypichka/pyrohy-ta-keksy/123-tuz-i-hrakh.md",
    "original": "- ванілін — 2 пачки <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 20,
    "current": "- ванілін — 2 пачки",
    "hints": [
@@ -3583,7 +3583,7 @@
   "Q0299": {
    "file": "recipes/07-vypichka/pyrohy-ta-keksy/123-tuz-i-hrakh.md",
    "original": "Назва рецепта читається нечітко. <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 27,
    "current": "Назва рецепта читається нечітко.",
    "hints": [
@@ -3751,7 +3751,7 @@
   "Q0313": {
    "file": "recipes/07-vypichka/pechyvo-ta-tistechka/130-pechyvo-z-hlazur-yu.md",
    "original": "- сметана — 0,5 л <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 18,
    "current": "- сметана — 0,5 л",
    "hints": [
@@ -3763,7 +3763,7 @@
   "Q0314": {
    "file": "recipes/07-vypichka/pechyvo-ta-tistechka/130-pechyvo-z-hlazur-yu.md",
    "original": "- сода — <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 21,
    "current": "- сода —",
    "hints": [
@@ -3775,7 +3775,7 @@
   "Q0315": {
    "file": "recipes/07-vypichka/pechyvo-ta-tistechka/130-pechyvo-z-hlazur-yu.md",
    "original": "- молоко — <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 27,
    "current": "- молоко —",
    "hints": [
@@ -3787,7 +3787,7 @@
   "Q0316": {
    "file": "recipes/07-vypichka/pechyvo-ta-tistechka/131-pechyvo-z-povydlom.md",
    "original": "- сметана — 1 п. <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 18,
    "current": "- сметана — 1 п.",
    "hints": [
@@ -3823,7 +3823,7 @@
   "Q0319": {
    "file": "recipes/07-vypichka/pechyvo-ta-tistechka/132-pechyvo-z-syrom.md",
    "original": "- сир — 400 г <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 17,
    "current": "- сир — 400 г",
    "hints": [
@@ -3835,7 +3835,7 @@
   "Q0320": {
    "file": "recipes/07-vypichka/pechyvo-ta-tistechka/132-pechyvo-z-syrom.md",
    "original": "- масло / маргарин — 250 г <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 18,
    "current": "- масло / маргарин — 250 г",
    "hints": [
@@ -3847,7 +3847,7 @@
   "Q0321": {
    "file": "recipes/07-vypichka/pechyvo-ta-tistechka/132-pechyvo-z-syrom.md",
    "original": "- мука — <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 19,
    "current": "- мука —",
    "hints": [
@@ -3859,7 +3859,7 @@
   "Q0322": {
    "file": "recipes/07-vypichka/pechyvo-ta-tistechka/132-pechyvo-z-syrom.md",
    "original": "- сода — <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 20,
    "current": "- сода —",
    "hints": [
@@ -3871,7 +3871,7 @@
   "Q0323": {
    "file": "recipes/07-vypichka/pechyvo-ta-tistechka/132-pechyvo-z-syrom.md",
    "original": "Замісити тісто та випікати печиво. <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 23,
    "current": "Замісити тісто та випікати печиво.",
    "hints": [
@@ -3883,7 +3883,7 @@
   "Q0324": {
    "file": "recipes/07-vypichka/pechyvo-ta-tistechka/133-tort-pechyvo-z-horikhamy.md",
    "original": "- яйця — 3 шт. <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 20,
    "current": "- яйця — 3 шт.",
    "hints": [
@@ -3895,7 +3895,7 @@
   "Q0325": {
    "file": "recipes/07-vypichka/pechyvo-ta-tistechka/133-tort-pechyvo-z-horikhamy.md",
    "original": "- горіхи — <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 21,
    "current": "- горіхи —",
    "hints": [
@@ -3907,7 +3907,7 @@
   "Q0326": {
    "file": "recipes/07-vypichka/pechyvo-ta-tistechka/133-tort-pechyvo-z-horikhamy.md",
    "original": "Замісити та випікати. <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 24,
    "current": "Замісити та випікати.",
    "hints": [
@@ -3943,7 +3943,7 @@
   "Q0329": {
    "file": "recipes/07-vypichka/pechyvo-ta-tistechka/135-tistechka-z-varennyam.md",
    "original": "- сода — <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 21,
    "current": "- сода —",
    "hints": [
@@ -3955,7 +3955,7 @@
   "Q0330": {
    "file": "recipes/07-vypichka/pechyvo-ta-tistechka/135-tistechka-z-varennyam.md",
    "original": "Розкачати, додати варення та випікати. <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 24,
    "current": "Розкачати, додати варення та випікати.",
    "hints": [
@@ -4099,7 +4099,7 @@
   "Q0342": {
    "file": "recipes/07-vypichka/pechyvo-ta-palychky/141-pechyvo-tistechka.md",
    "original": "- яйця — <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 19,
    "current": "- яйця —",
    "hints": [
@@ -4111,7 +4111,7 @@
   "Q0343": {
    "file": "recipes/07-vypichka/pechyvo-ta-palychky/141-pechyvo-tistechka.md",
    "original": "- какао — <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 20,
    "current": "- какао —",
    "hints": [
@@ -4135,7 +4135,7 @@
   "Q0345": {
    "file": "recipes/07-vypichka/pechyvo-ta-palychky/141-pechyvo-tistechka.md",
    "original": "Нижня частина сторінки нечітка. <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 22,
    "current": "Нижня частина сторінки нечітка.",
    "hints": [
@@ -4147,7 +4147,7 @@
   "Q0346": {
    "file": "recipes/07-vypichka/pechyvo-ta-rohalyky/142-zhuchky.md",
    "original": "- дріжджі — 3/4 пачки <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 18,
    "current": "- дріжджі — 3/4 пачки",
    "hints": [
@@ -4171,7 +4171,7 @@
   "Q0348": {
    "file": "recipes/07-vypichka/pechyvo-ta-rohalyky/142-zhuchky.md",
    "original": "- маргарин — 0,5 пачки <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 21,
    "current": "- маргарин — 0,5 пачки",
    "hints": [
@@ -4231,7 +4231,7 @@
   "Q0353": {
    "file": "recipes/08-deserty/kremy/145-maslyanyy-krem.md",
    "original": "- ванілін <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 21,
    "current": "- ванілін",
    "hints": [
@@ -4291,7 +4291,7 @@
   "Q0358": {
    "file": "recipes/08-deserty/varennya/147-varennya-z-hrush-i-tsytrusovykh.md",
    "original": "- <!-- ?? ще 2 позиції бліді -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 22,
    "current": "-",
    "hints": [
@@ -4387,7 +4387,7 @@
   "Q0366": {
    "file": "recipes/08-deserty/inshi-deserty/150-pursey-desert.md",
    "original": "Крем із желатином. <!-- ?? точна назва та спосіб -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 22,
    "current": "Крем із желатином.",
    "hints": [
@@ -4969,7 +4969,7 @@
   "Q0414": {
    "file": "recipes/01-konservatsiya/kabachky/038-kabachkovi-ananasy.md",
    "original": "- лимонна кислота — 1 столова ложка <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 21,
    "current": "- лимонна кислота — 1 столова ложка",
    "hints": [
@@ -4981,7 +4981,7 @@
   "Q0415": {
    "file": "recipes/05-zakusky/syrni-zakusky/098-syr-halatskyy.md",
    "original": "- сода — 1 чайна ложка <!-- ?? уточнити рядок після соди -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 19,
    "current": "- сода — 1 чайна ложка",
    "hints": [
@@ -4993,7 +4993,7 @@
   "Q0416": {
    "file": "recipes/05-zakusky/syrni-zakusky/098-syr-halatskyy.md",
    "original": "- сода погашена — 1 чайна ложка <!-- ?? написано невиразно -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 22,
    "current": "- сода погашена — 1 чайна ложка",
    "hints": [
@@ -5005,7 +5005,7 @@
   "Q0417": {
    "file": "recipes/07-vypichka/torty/107-super-tort-kolosok.md",
    "original": "- маргарин — 1 склянка <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 19,
    "current": "- маргарин — 1 склянка",
    "hints": [
@@ -5029,7 +5029,7 @@
   "Q0419": {
    "file": "recipes/07-vypichka/pyrohy-ta-keksy/120-pyrih-troyanda.md",
    "original": "- мед або масло — 2 столові ложки <!-- ?? слово невиразне -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 20,
    "current": "- мед або масло — 2 столові ложки",
    "hints": [
@@ -5041,7 +5041,7 @@
   "Q0420": {
    "file": "recipes/07-vypichka/pyrohy-ta-keksy/123-tuz-i-hrakh.md",
    "original": "- маргарин / масло — 1–2 столові ложки <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 18,
    "current": "- маргарин / масло — 1–2 столові ложки",
    "hints": [
@@ -5065,7 +5065,7 @@
   "Q0422": {
    "file": "recipes/07-vypichka/pechyvo-ta-tistechka/129-pechyvo-z-varennyam-variant-2.md",
    "original": "- мука — 1 склянка <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 17,
    "current": "- мука — 1 склянка",
    "hints": [
@@ -5077,7 +5077,7 @@
   "Q0423": {
    "file": "recipes/07-vypichka/pechyvo-ta-tistechka/129-pechyvo-z-varennyam-variant-2.md",
    "original": "- сода — 1 чайна ложка <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 21,
    "current": "- сода — 1 чайна ложка",
    "hints": [
@@ -5089,7 +5089,7 @@
   "Q0424": {
    "file": "recipes/07-vypichka/pechyvo-ta-tistechka/134-tistechka-horishky.md",
    "original": "- мука — 1,5 склянки <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 20,
    "current": "- мука — 1,5 склянки",
    "hints": [
@@ -5101,7 +5101,7 @@
   "Q0425": {
    "file": "recipes/07-vypichka/pechyvo-ta-palychky/139-palychky.md",
    "original": "- мука — 4–5 склянок <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 21,
    "current": "- мука — 4–5 склянок",
    "hints": [
@@ -5113,7 +5113,7 @@
   "Q0426": {
    "file": "recipes/07-vypichka/pechyvo-ta-rohalyky/142-zhuchky.md",
    "original": "- мука — 1 склянка <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 20,
    "current": "- мука — 1 склянка",
    "hints": [
@@ -5125,7 +5125,7 @@
   "Q0427": {
    "file": "recipes/08-deserty/kremy/145-maslyanyy-krem.md",
    "original": "- цукор / пудра — 1 склянка <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 20,
    "current": "- цукор / пудра — 1 склянка",
    "hints": [
@@ -5161,7 +5161,7 @@
   "Q0430": {
    "file": "recipes/07-vypichka/rulety/110-rulet-bez-nazvy.md",
    "original": "<!-- ?? Claude: назва — у блокноті без назви, під заголовком «Рулети» -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 17,
    "current": "",
    "hints": [
@@ -5169,6 +5169,702 @@
    ],
    "recipe_id": "110",
    "title": "Рулет (без назви)"
+  },
+  "Q0431": {
+   "file": "recipes/01-konservatsiya/ohirky/001-zelentsi-z-sousom.md",
+   "original": "Цибулю обсмажити і моркву, зеленці відварити, … тушкувати. <!-- ?? у зошиті «грибá відварити»; середина рядка бліда -->",
+   "status": "open",
+   "line_no": 26,
+   "current": "Цибулю обсмажити і моркву, зеленці відварити, … тушкувати.",
+   "hints": [
+    "у зошиті «грибá відварити»; середина рядка бліда"
+   ],
+   "recipe_id": "001",
+   "title": "Зеленці з соусом"
+  },
+  "Q0432": {
+   "file": "recipes/01-konservatsiya/ohirky/003-ohirky-v-tomati.md",
+   "original": "- олія — 120 г <!-- ?? друга цифра нечітка — 120 чи 180? -->",
+   "status": "open",
+   "line_no": 24,
+   "current": "- олія — 120 г",
+   "hints": [
+    "друга цифра нечітка — 120 чи 180?"
+   ],
+   "recipe_id": "003",
+   "title": "Огірки в томаті"
+  },
+  "Q0433": {
+   "file": "recipes/01-konservatsiya/pomidory/015-pomidory-dolkamy-variant-2.md",
+   "original": "1. Маринад прокип'ятити й охолодити, додати 5 столових ложок оцту і олію. <!-- ?? кількість олії («… ст. л.») — на відірваному краю сторінки -->",
+   "status": "open",
+   "line_no": 28,
+   "current": "1. Маринад прокип'ятити й охолодити, додати 5 столових ложок оцту і олію.",
+   "hints": [
+    "кількість олії («… ст. л.») — на відірваному краю сторінки"
+   ],
+   "recipe_id": "015",
+   "title": "Помідори дольками — варіант 2"
+  },
+  "Q0434": {
+   "file": "recipes/01-konservatsiya/perets/022-perets-variant-3.md",
+   "original": "<!-- ?? на фото той самий рецепт, що 023 «З перцю», записаний удруге — лишити обидва чи видалити цей? -->",
+   "status": "open",
+   "line_no": 17,
+   "current": "",
+   "hints": [
+    "на фото той самий рецепт, що 023 «З перцю», записаний удруге — лишити обидва чи видалити цей?"
+   ],
+   "recipe_id": "022",
+   "title": "Перець — варіант 3"
+  },
+  "Q0435": {
+   "file": "recipes/01-konservatsiya/perets/026-perets-z-baklazhanamy.md",
+   "original": "- олія — ?00 г <!-- ?? перша цифра на відірваному краю -->",
+   "status": "open",
+   "line_no": 22,
+   "current": "- олія — ?00 г",
+   "hints": [
+    "перша цифра на відірваному краю"
+   ],
+   "recipe_id": "026",
+   "title": "Перець з баклажанами"
+  },
+  "Q0436": {
+   "file": "recipes/01-konservatsiya/perets/026-perets-z-baklazhanamy.md",
+   "original": "Варити 20 хв; як закипить — закривати. <!-- ?? наступний рядок частково відірваний: «…помідори …ати в соку» --> Вихід: 18 баночок.",
+   "status": "open",
+   "line_no": 28,
+   "current": "Варити 20 хв; як закипить — закривати. Вихід: 18 баночок.",
+   "hints": [
+    "наступний рядок частково відірваний: «…помідори …ати в соку»"
+   ],
+   "recipe_id": "026",
+   "title": "Перець з баклажанами"
+  },
+  "Q0437": {
+   "file": "recipes/01-konservatsiya/perets/028-perets-u-tomatakh.md",
+   "original": "Помідори перекрутити, хай закипить, … все, хай покипить, потім перець. <!-- ?? олівець блідий, частина слів не читається -->",
+   "status": "open",
+   "line_no": 27,
+   "current": "Помідори перекрутити, хай закипить, … все, хай покипить, потім перець.",
+   "hints": [
+    "олівець блідий, частина слів не читається"
+   ],
+   "recipe_id": "028",
+   "title": "Перець у томатах"
+  },
+  "Q0438": {
+   "file": "recipes/01-konservatsiya/perets/028-perets-u-tomatakh.md",
+   "original": "Перець чорний, гіркий. <!-- ?? останній рядок блідий: «перець чорний, гіркий»? -->",
+   "status": "open",
+   "line_no": 28,
+   "current": "Перець чорний, гіркий.",
+   "hints": [
+    "останній рядок блідий: «перець чорний, гіркий»?"
+   ],
+   "recipe_id": "028",
+   "title": "Перець у томатах"
+  },
+  "Q0439": {
+   "file": "recipes/01-konservatsiya/perets/029-perets-iz-zelentsyamy.md",
+   "original": "- зеленці варені <!-- ?? «зеленці» — зелені помідори чи огірки? кількість не вказана -->",
+   "status": "open",
+   "line_no": 25,
+   "current": "- зеленці варені",
+   "hints": [
+    "«зеленці» — зелені помідори чи огірки? кількість не вказана"
+   ],
+   "recipe_id": "029",
+   "title": "Перець із зеленцями"
+  },
+  "Q0440": {
+   "file": "recipes/01-konservatsiya/perets/032-salat-perets-i-hryby.md",
+   "original": "- томатна паста — 200 г <!-- ?? перша цифра стерта — схоже на 2 -->",
+   "status": "open",
+   "line_no": 19,
+   "current": "- томатна паста — 200 г",
+   "hints": [
+    "перша цифра стерта — схоже на 2"
+   ],
+   "recipe_id": "032",
+   "title": "Салат «Перець і гриби»"
+  },
+  "Q0441": {
+   "file": "recipes/01-konservatsiya/kabachky/035-kabachky-salat.md",
+   "original": "На подвійну порцію (приписка в рамці): 0,5 л пасти, 0,5 л води, «33 помід.» <!-- ?? «33 помід.» — що це означає? -->",
+   "status": "open",
+   "line_no": 32,
+   "current": "На подвійну порцію (приписка в рамці): 0,5 л пасти, 0,5 л води, «33 помід.»",
+   "hints": [
+    "«33 помід.» — що це означає?"
+   ],
+   "recipe_id": "035",
+   "title": "Кабачки «Салат»"
+  },
+  "Q0442": {
+   "file": "recipes/01-konservatsiya/kabachky/036-kabachky-iz-morkvoyu.md",
+   "original": "- соус — 1 столова ложка <!-- ?? перша цифра бліда -->",
+   "status": "open",
+   "line_no": 19,
+   "current": "- соус — 1 столова ложка",
+   "hints": [
+    "перша цифра бліда"
+   ],
+   "recipe_id": "036",
+   "title": "Кабачки із морквою"
+  },
+  "Q0443": {
+   "file": "recipes/01-konservatsiya/kabachky/036-kabachky-iz-morkvoyu.md",
+   "original": "- оцет — 100 г <!-- ?? цифра бліда -->",
+   "status": "open",
+   "line_no": 22,
+   "current": "- оцет — 100 г",
+   "hints": [
+    "цифра бліда"
+   ],
+   "recipe_id": "036",
+   "title": "Кабачки із морквою"
+  },
+  "Q0444": {
+   "file": "recipes/01-konservatsiya/kabachky/038-kabachkovi-ananasy.md",
+   "original": "- есенція ананасова <!-- ?? кількість перед «есенції» не читається -->",
+   "status": "open",
+   "line_no": 23,
+   "current": "- есенція ананасова",
+   "hints": [
+    "кількість перед «есенції» не читається"
+   ],
+   "recipe_id": "038",
+   "title": "Кабачкові ананаси"
+  },
+  "Q0445": {
+   "file": "recipes/01-konservatsiya/kabachky/038-kabachkovi-ananasy.md",
+   "original": "5. Варити 5 хв, щоб були твердуваті, … хв. <!-- ?? останній рядок вицвілий -->",
+   "status": "open",
+   "line_no": 30,
+   "current": "5. Варити 5 хв, щоб були твердуваті, … хв.",
+   "hints": [
+    "останній рядок вицвілий"
+   ],
+   "recipe_id": "038",
+   "title": "Кабачкові ананаси"
+  },
+  "Q0446": {
+   "file": "recipes/01-konservatsiya/kabachky/041-ikra-z-kabachkiv-z-mayonezom.md",
+   "original": "<!-- ?? через рецепт проведені навскісні лінії й приписка «не… р.» — можливо, мама позначила, що не робити; лишати в книзі? -->",
+   "status": "open",
+   "line_no": 18,
+   "current": "",
+   "hints": [
+    "через рецепт проведені навскісні лінії й приписка «не… р.» — можливо, мама позначила, що не робити; лишати в книзі?"
+   ],
+   "recipe_id": "041",
+   "title": "Ікра з кабачків з майонезом"
+  },
+  "Q0447": {
+   "file": "recipes/01-konservatsiya/kabachky/042-ikra-z-kabachkiv-variant-2.md",
+   "original": "- томатна паста — 1 баночка («33 помідоро») <!-- ?? «33 помідоро» — назва пасти чи щось інше? -->",
+   "status": "open",
+   "line_no": 25,
+   "current": "- томатна паста — 1 баночка («33 помідоро»)",
+   "hints": [
+    "«33 помідоро» — назва пасти чи щось інше?"
+   ],
+   "recipe_id": "042",
+   "title": "Ікра з кабачків — варіант 2"
+  },
+  "Q0448": {
+   "file": "recipes/01-konservatsiya/kapusta/047-z-kapusty.md",
+   "original": "- цукор — 150 г <!-- ?? перша цифра виправлена — 150 чи 450? -->",
+   "status": "open",
+   "line_no": 22,
+   "current": "- цукор — 150 г",
+   "hints": [
+    "перша цифра виправлена — 150 чи 450?"
+   ],
+   "recipe_id": "047",
+   "title": "З капусти"
+  },
+  "Q0449": {
+   "file": "recipes/01-konservatsiya/kapusta/047-z-kapusty.md",
+   "original": "Дати постояти 3–4 години. Стерилізувати 1… <!-- ?? час стерилізації на загнутому куті сторінки -->",
+   "status": "open",
+   "line_no": 28,
+   "current": "Дати постояти 3–4 години. Стерилізувати 1…",
+   "hints": [
+    "час стерилізації на загнутому куті сторінки"
+   ],
+   "recipe_id": "047",
+   "title": "З капусти"
+  },
+  "Q0450": {
+   "file": "recipes/01-konservatsiya/salaty-na-zymu/054-salat-pomidory-z-rysom.md",
+   "original": "1. Варити 20 хв, потім додати рис і варити ще 20 хв. <!-- ?? час дописано блідо на полі — «20» чи «10»? -->",
+   "status": "open",
+   "line_no": 28,
+   "current": "1. Варити 20 хв, потім додати рис і варити ще 20 хв.",
+   "hints": [
+    "час дописано блідо на полі — «20» чи «10»?"
+   ],
+   "recipe_id": "054",
+   "title": "Салат «Помідори з рисом»"
+  },
+  "Q0451": {
+   "file": "recipes/01-konservatsiya/borshchovi-zapravky/055-borshchova-pryprava.md",
+   "original": "- помідори — 1,5 кг <!-- ?? цифра переписана — 1,5 чи 1,6? -->",
+   "status": "open",
+   "line_no": 21,
+   "current": "- помідори — 1,5 кг",
+   "hints": [
+    "цифра переписана — 1,5 чи 1,6?"
+   ],
+   "recipe_id": "055",
+   "title": "Борщова приправа"
+  },
+  "Q0452": {
+   "file": "recipes/02-salaty/ovochevi-salaty/058-salat-horoshok.md",
+   "original": "<!-- ?? поруч із назвою червоним «На рудо»/«На руду» і галочка — що це означає? -->",
+   "status": "open",
+   "line_no": 19,
+   "current": "",
+   "hints": [
+    "поруч із назвою червоним «На рудо»/«На руду» і галочка — що це означає?"
+   ],
+   "recipe_id": "058",
+   "title": "Салат «Горошок»"
+  },
+  "Q0453": {
+   "file": "recipes/02-salaty/zmishani-salaty/062-salat-hnizdechko.md",
+   "original": "2. Усе інше порізати соломкою, полити майонезом, посолити й викласти навколо. <!-- ?? кінець рядка блідий — «викласти навколо»? -->",
+   "status": "open",
+   "line_no": 30,
+   "current": "2. Усе інше порізати соломкою, полити майонезом, посолити й викласти навколо.",
+   "hints": [
+    "кінець рядка блідий — «викласти навколо»?"
+   ],
+   "recipe_id": "062",
+   "title": "Салат «Гніздечко»"
+  },
+  "Q0454": {
+   "file": "recipes/02-salaty/zmishani-salaty/063-salat-lyubymyy.md",
+   "original": "- майонез — 1 пачка <!-- ?? цифра виправлена — 1 чи 2 пачки? -->",
+   "status": "open",
+   "line_no": 26,
+   "current": "- майонез — 1 пачка",
+   "hints": [
+    "цифра виправлена — 1 чи 2 пачки?"
+   ],
+   "recipe_id": "063",
+   "title": "Салат «Любимый»"
+  },
+  "Q0455": {
+   "file": "recipes/02-salaty/zmishani-salaty/064-salat-nezhnost.md",
+   "original": "- крабові палички — 140 г <!-- ?? перша цифра нечітка — 140 чи 240? -->",
+   "status": "open",
+   "line_no": 21,
+   "current": "- крабові палички — 140 г",
+   "hints": [
+    "перша цифра нечітка — 140 чи 240?"
+   ],
+   "recipe_id": "064",
+   "title": "Салат «Нежность»"
+  },
+  "Q0456": {
+   "file": "recipes/02-salaty/salaty-z-kurkoyu/067-salat-hranatovyy-braslet.md",
+   "original": "- куряче стегно — 200 г <!-- ?? перша цифра нечітка — 200 чи 400? -->",
+   "status": "open",
+   "line_no": 22,
+   "current": "- куряче стегно — 200 г",
+   "hints": [
+    "перша цифра нечітка — 200 чи 400?"
+   ],
+   "recipe_id": "067",
+   "title": "Салат «Гранатовый браслет»"
+  },
+  "Q0457": {
+   "file": "recipes/02-salaty/m-yasni-salaty/069-salat-z-hranata.md",
+   "original": "<!-- ?? біля назви червоним підпис «Н. Журба»? — чий рецепт -->",
+   "status": "open",
+   "line_no": 18,
+   "current": "",
+   "hints": [
+    "біля назви червоним підпис «Н. Журба»? — чий рецепт"
+   ],
+   "recipe_id": "069",
+   "title": "Салат «З граната»"
+  },
+  "Q0458": {
+   "file": "recipes/02-salaty/rybni-salaty/070-salat-z-sardyn.md",
+   "original": "1. сардини <!-- ?? слово в дужках після «сардини» вицвіло -->",
+   "status": "open",
+   "line_no": 19,
+   "current": "1. сардини",
+   "hints": [
+    "слово в дужках після «сардини» вицвіло"
+   ],
+   "recipe_id": "070",
+   "title": "Салат «З сардин»"
+  },
+  "Q0459": {
+   "file": "recipes/02-salaty/salaty-z-kurkoyu/078-salat-solnyshko.md",
+   "original": "5. білки <!-- ?? слово бліде — «білки яєць»? -->",
+   "status": "open",
+   "line_no": 34,
+   "current": "5. білки",
+   "hints": [
+    "слово бліде — «білки яєць»?"
+   ],
+   "recipe_id": "078",
+   "title": "Салат «Солнышко»"
+  },
+  "Q0460": {
+   "file": "recipes/02-salaty/krabovi-salaty/083-salat-rys-i-palochky.md",
+   "original": "- яйця <!-- ?? кількість у дужках бліда — «5 шт.»? -->",
+   "status": "open",
+   "line_no": 20,
+   "current": "- яйця",
+   "hints": [
+    "кількість у дужках бліда — «5 шт.»?"
+   ],
+   "recipe_id": "083",
+   "title": "Салат «Рис і палочки»"
+  },
+  "Q0461": {
+   "file": "recipes/02-salaty/moreprodukty/084-salat-morskaya-zahadka.md",
+   "original": "- морква варена <!-- ?? кількість бліда -->",
+   "status": "open",
+   "line_no": 21,
+   "current": "- морква варена",
+   "hints": [
+    "кількість бліда"
+   ],
+   "recipe_id": "084",
+   "title": "Салат «Морская загадка»"
+  },
+  "Q0462": {
+   "file": "recipes/02-salaty/moreprodukty/084-salat-morskaya-zahadka.md",
+   "original": "- 250 г … <!-- ?? останні рядки вицвілі -->",
+   "status": "open",
+   "line_no": 27,
+   "current": "- 250 г …",
+   "hints": [
+    "останні рядки вицвілі"
+   ],
+   "recipe_id": "084",
+   "title": "Салат «Морская загадка»"
+  },
+  "Q0463": {
+   "file": "recipes/06-sousy-ta-prypravy/sousy/092-mayonez.md",
+   "original": "Усі інгредієнти повинні бути однієї температури. <!-- ?? останнє слово вицвіле — «однієї температури»? -->",
+   "status": "open",
+   "line_no": 29,
+   "current": "Усі інгредієнти повинні бути однієї температури.",
+   "hints": [
+    "останнє слово вицвіле — «однієї температури»?"
+   ],
+   "recipe_id": "092",
+   "title": "Майонез"
+  },
+  "Q0464": {
+   "file": "recipes/04-ryba-ta-moreprodukty/oseledets/095-silotka.md",
+   "original": "- риба морожена — 1 кг <!-- ?? одиниця після «1» вицвіла -->",
+   "status": "open",
+   "line_no": 19,
+   "current": "- риба морожена — 1 кг",
+   "hints": [
+    "одиниця після «1» вицвіла"
+   ],
+   "recipe_id": "095",
+   "title": "Сільотка"
+  },
+  "Q0465": {
+   "file": "recipes/04-ryba-ta-moreprodukty/oseledets/095-silotka.md",
+   "original": "- оцет — 150 г + 50 г води <!-- ?? друга цифра нечітка — 150 чи 170? -->",
+   "status": "open",
+   "line_no": 20,
+   "current": "- оцет — 150 г + 50 г води",
+   "hints": [
+    "друга цифра нечітка — 150 чи 170?"
+   ],
+   "recipe_id": "095",
+   "title": "Сільотка"
+  },
+  "Q0466": {
+   "file": "recipes/04-ryba-ta-moreprodukty/rybni-stravy/096-kopchena-ryba.md",
+   "original": "300 г води, жменя цибулевого лушпиння… змішати обидва розчини… <!-- ?? нижня частина сторінки вицвіла, далі «25 … оцту?» — прочитати не вдалося -->",
+   "status": "open",
+   "line_no": 25,
+   "current": "300 г води, жменя цибулевого лушпиння… змішати обидва розчини…",
+   "hints": [
+    "нижня частина сторінки вицвіла, далі «25 … оцту?» — прочитати не вдалося"
+   ],
+   "recipe_id": "096",
+   "title": "Копчена риба"
+  },
+  "Q0467": {
+   "file": "recipes/05-zakusky/syrni-zakusky/098-syr-hollandskyy.md",
+   "original": "- яйця — 2 шт. <!-- ?? цифра виправлена — 2 чи 3? -->",
+   "status": "open",
+   "line_no": 21,
+   "current": "- яйця — 2 шт.",
+   "hints": [
+    "цифра виправлена — 2 чи 3?"
+   ],
+   "recipe_id": "098",
+   "title": "Сир голландський"
+  },
+  "Q0468": {
+   "file": "recipes/05-zakusky/syrni-zakusky/098-syr-hollandskyy.md",
+   "original": "2. Додати яйця, соду, сіль, олію й масло, кип'ятити ще 3 хв. <!-- ?? час під плямою — «3 хв»? -->",
+   "status": "open",
+   "line_no": 29,
+   "current": "2. Додати яйця, соду, сіль, олію й масло, кип'ятити ще 3 хв.",
+   "hints": [
+    "час під плямою — «3 хв»?"
+   ],
+   "recipe_id": "098",
+   "title": "Сир голландський"
+  },
+  "Q0469": {
+   "file": "recipes/08-deserty/inshi-deserty/099-khalva.md",
+   "original": "1. Підсмажити 2 склянки зерняток (насіння) і 3 склянки борошна. <!-- ?? «зернят» — соняшникового насіння? -->",
+   "status": "open",
+   "line_no": 19,
+   "current": "1. Підсмажити 2 склянки зерняток (насіння) і 3 склянки борошна.",
+   "hints": [
+    "«зернят» — соняшникового насіння?"
+   ],
+   "recipe_id": "099",
+   "title": "Халва"
+  },
+  "Q0470": {
+   "file": "recipes/07-vypichka/pyrohy-ta-keksy/100-pyrizhky.md",
+   "original": "Розчинити дріжджі, усе змішати. <!-- ?? далі в зошиті нічого не записано -->",
+   "status": "open",
+   "line_no": 28,
+   "current": "Розчинити дріжджі, усе змішати.",
+   "hints": [
+    "далі в зошиті нічого не записано"
+   ],
+   "recipe_id": "100",
+   "title": "Пиріжки"
+  },
+  "Q0471": {
+   "file": "recipes/06-sousy-ta-prypravy/sousy-ketchupy-ta-adzhyky/104-ketchup.md",
+   "original": "<!-- ?? у дужках після назви «ірн кума» — чий це рецепт? -->",
+   "status": "open",
+   "line_no": 19,
+   "current": "",
+   "hints": [
+    "у дужках після назви «ірн кума» — чий це рецепт?"
+   ],
+   "recipe_id": "104",
+   "title": "Кетчуп"
+  },
+  "Q0472": {
+   "file": "recipes/06-sousy-ta-prypravy/sousy-ketchupy-ta-adzhyky/104-ketchup.md",
+   "original": "1. Помідори, цибулю, буряк і яблука перекрутити й варити 40 хв. <!-- ?? перша цифра бліда — 40 чи 10? -->",
+   "status": "open",
+   "line_no": 36,
+   "current": "1. Помідори, цибулю, буряк і яблука перекрутити й варити 40 хв.",
+   "hints": [
+    "перша цифра бліда — 40 чи 10?"
+   ],
+   "recipe_id": "104",
+   "title": "Кетчуп"
+  },
+  "Q0473": {
+   "file": "recipes/07-vypichka/torty/106-medovyk.md",
+   "original": "- борошно — 3 склянки <!-- ?? цифри в цьому рядку й нижче бліді -->",
+   "status": "open",
+   "line_no": 21,
+   "current": "- борошно — 3 склянки",
+   "hints": [
+    "цифри в цьому рядку й нижче бліді"
+   ],
+   "recipe_id": "106",
+   "title": "Медовик"
+  },
+  "Q0474": {
+   "file": "recipes/07-vypichka/rulety/110-biskvitnyy-rulet.md",
+   "original": "Збоку дописано: «сода — ?» <!-- ?? що мама мала на увазі під «сода — ?» -->",
+   "status": "open",
+   "line_no": 28,
+   "current": "Збоку дописано: «сода — ?»",
+   "hints": [
+    "що мама мала на увазі під «сода — ?»"
+   ],
+   "recipe_id": "110",
+   "title": "Бісквітний рулет"
+  },
+  "Q0475": {
+   "file": "recipes/07-vypichka/torty/113-tort-kruchenyy.md",
+   "original": "- масло — 200 г <!-- ?? перша цифра нечітка — 200 чи 700 г? -->",
+   "status": "open",
+   "line_no": 36,
+   "current": "- масло — 200 г",
+   "hints": [
+    "перша цифра нечітка — 200 чи 700 г?"
+   ],
+   "recipe_id": "113",
+   "title": "Торт «Кручений»"
+  },
+  "Q0476": {
+   "file": "recipes/07-vypichka/torty/116-zhozefina.md",
+   "original": "<!-- ?? назва червоним — «Жозефіна» чи «Зозефіна»? -->",
+   "status": "open",
+   "line_no": 18,
+   "current": "",
+   "hints": [
+    "назва червоним — «Жозефіна» чи «Зозефіна»?"
+   ],
+   "recipe_id": "116",
+   "title": "Жозефіна"
+  },
+  "Q0477": {
+   "file": "recipes/07-vypichka/torty/116-zhozefina.md",
+   "original": "- масло — 200 г <!-- ?? перша цифра нечітка — 200 чи 400? -->",
+   "status": "open",
+   "line_no": 31,
+   "current": "- масло — 200 г",
+   "hints": [
+    "перша цифра нечітка — 200 чи 400?"
+   ],
+   "recipe_id": "116",
+   "title": "Жозефіна"
+  },
+  "Q0478": {
+   "file": "recipes/08-deserty/kremy/122-ptashyne-moloko.md",
+   "original": "<!-- ?? зліва біля рецепта позначка «Б/М» — що означає? -->",
+   "status": "open",
+   "line_no": 18,
+   "current": "",
+   "hints": [
+    "зліва біля рецепта позначка «Б/М» — що означає?"
+   ],
+   "recipe_id": "122",
+   "title": "Пташине молоко"
+  },
+  "Q0479": {
+   "file": "recipes/07-vypichka/torty/123-huzh-i-brazh.md",
+   "original": "<!-- ?? назва червоним — «Гуж і Браж»? перша літера нечітка -->",
+   "status": "open",
+   "line_no": 18,
+   "current": "",
+   "hints": [
+    "назва червоним — «Гуж і Браж»? перша літера нечітка"
+   ],
+   "recipe_id": "123",
+   "title": "Гуж і Браж"
+  },
+  "Q0480": {
+   "file": "recipes/07-vypichka/torty/128-kokhanyy.md",
+   "original": "- амоній — 1 ст. <!-- ?? так записано — «1 ст. амонію»; склянка чи ложка? -->",
+   "status": "open",
+   "line_no": 22,
+   "current": "- амоній — 1 ст.",
+   "hints": [
+    "так записано — «1 ст. амонію»; склянка чи ложка?"
+   ],
+   "recipe_id": "128",
+   "title": "Коханий"
+  },
+  "Q0481": {
+   "file": "recipes/07-vypichka/pechyvo-ta-tistechka/130-pechyvo-z-makom-bez-nazvy.md",
+   "original": "<!-- ?? початок рецепта й назва — на попередній сторінці зошита, якої немає серед фото -->",
+   "status": "open",
+   "line_no": 18,
+   "current": "",
+   "hints": [
+    "початок рецепта й назва — на попередній сторінці зошита, якої немає серед фото"
+   ],
+   "recipe_id": "130",
+   "title": "Печиво з маком (без назви)"
+  },
+  "Q0482": {
+   "file": "recipes/08-deserty/kremy/135-shokoladne-maslo.md",
+   "original": "- молоко — 1 ложка <!-- ?? «1 л.» — ложка чи літр? -->",
+   "status": "open",
+   "line_no": 22,
+   "current": "- молоко — 1 ложка",
+   "hints": [
+    "«1 л.» — ложка чи літр?"
+   ],
+   "recipe_id": "135",
+   "title": "Шоколадне масло"
+  },
+  "Q0483": {
+   "file": "recipes/07-vypichka/pechyvo-ta-palychky/141-bez-nazvy-z-mankoyu.md",
+   "original": "<!-- ?? у зошиті без назви (записано під заголовком «Креми», але з содою — схоже на тісто) -->",
+   "status": "open",
+   "line_no": 18,
+   "current": "",
+   "hints": [
+    "у зошиті без назви (записано під заголовком «Креми», але з содою — схоже на тісто)"
+   ],
+   "recipe_id": "141",
+   "title": "Без назви (з манкою)"
+  },
+  "Q0484": {
+   "file": "recipes/07-vypichka/pechyvo-ta-rohalyky/142-mochalka.md",
+   "original": "- олія — 6 столових ложок <!-- ?? цифра виправлена — 6 чи 8? -->",
+   "status": "open",
+   "line_no": 21,
+   "current": "- олія — 6 столових ложок",
+   "hints": [
+    "цифра виправлена — 6 чи 8?"
+   ],
+   "recipe_id": "142",
+   "title": "Мочалка"
+  },
+  "Q0485": {
+   "file": "recipes/08-deserty/varennya/147-varennya-z-hrush-iz-tsytrusovymy.md",
+   "original": "- горіхи подрібнені — 200 г <!-- ?? перша цифра нечітка — 200 чи 100? -->",
+   "status": "open",
+   "line_no": 22,
+   "current": "- горіхи подрібнені — 200 г",
+   "hints": [
+    "перша цифра нечітка — 200 чи 100?"
+   ],
+   "recipe_id": "147",
+   "title": "Варення з груш із цитрусовими"
+  },
+  "Q0486": {
+   "file": "recipes/08-deserty/varennya/148-varennya-z-polunytsi.md",
+   "original": "Цукор із водою кип'ятити 15 хв. <!-- ?? як саме використати «0,5 л цукру + 0,5 л полуниці» — у зошиті не написано -->",
+   "status": "open",
+   "line_no": 27,
+   "current": "Цукор із водою кип'ятити 15 хв.",
+   "hints": [
+    "як саме використати «0,5 л цукру + 0,5 л полуниці» — у зошиті не написано"
+   ],
+   "recipe_id": "148",
+   "title": "Варення з полуниці"
+  },
+  "Q0487": {
+   "file": "recipes/09-napoyi/likery/152-vyshnevyy-liker.md",
+   "original": "1. Вишні, листя, цукор і воду варити 20 хв (від закипання). <!-- ?? слово перед «як закипить» закреслене -->",
+   "status": "open",
+   "line_no": 26,
+   "current": "1. Вишні, листя, цукор і воду варити 20 хв (від закипання).",
+   "hints": [
+    "слово перед «як закипить» закреслене"
+   ],
+   "recipe_id": "152",
+   "title": "Вишневий лікер"
+  },
+  "Q0488": {
+   "file": "recipes/03-osnovni-stravy/m-yasni-stravy/089-yizhaky.md",
+   "original": "- мівіна (локшина швидкого приготування) — 5 пачок <!-- ?? слово нечітке — «мівіни»? -->",
+   "status": "open",
+   "line_no": 20,
+   "current": "- мівіна (локшина швидкого приготування) — 5 пачок",
+   "hints": [
+    "слово нечітке — «мівіни»?"
+   ],
+   "recipe_id": "089",
+   "title": "Їжаки"
   }
  }
 }
