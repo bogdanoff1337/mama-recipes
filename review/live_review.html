@@ -2,25 +2,260 @@
 <html lang="uk">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Вичитка рецептів</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Мамині рецепти — вичитка</title>
 <style>
-:root{--bg:#f4f0e8;--surface:#fffdf9;--ink:#29251f;--muted:#766f63;--line:#ded5c7;--accent:#9c542c;--accent-soft:#f8e5cf;--success:#296244;--danger:#a83f35;--photo:#25211d}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Inter,ui-sans-serif,system-ui,sans-serif}header{height:64px;padding:0 24px;display:flex;align-items:center;gap:18px;border-bottom:1px solid var(--line);background:var(--surface)}h1{font-size:17px;margin:0;white-space:nowrap}.progress{height:8px;max-width:360px;flex:1;background:#e7dfd3;border-radius:99px;overflow:hidden}.progress i{display:block;height:100%;background:var(--success);transition:width .2s}.count{font-variant-numeric:tabular-nums;color:var(--muted);white-space:nowrap}main{display:grid;grid-template-columns:250px minmax(320px,1fr) minmax(430px,1.15fr);height:calc(100vh - 64px)}nav{overflow:auto;border-right:1px solid var(--line);background:#faf7f1;padding:14px 10px}.group{color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.08em;margin:14px 8px 5px;text-transform:uppercase}.group:first-child{margin-top:2px}.recipe{width:100%;text-align:left;border:0;border-radius:8px;background:transparent;color:var(--ink);font:inherit;padding:8px;cursor:pointer}.recipe:hover{background:#f1e9dd}.recipe.active{background:var(--accent-soft);color:#703313}.recipe small{display:block;color:var(--muted);font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.photo{position:relative;display:grid;place-items:center;overflow:hidden;background:var(--photo)}.photo img{max-height:100%;max-width:100%;object-fit:contain}.photo .missing{color:#d6cfc5;text-align:center;padding:30px}.text{overflow:auto;background:var(--surface);padding:28px 32px 70px}.text h2{font-size:23px;line-height:1.2;margin:0;display:flex;align-items:baseline;gap:8px}.text h2 input{flex:1;min-width:0;font:inherit;color:inherit;border:1px solid transparent;border-radius:6px;background:transparent;padding:2px 6px;margin-left:-6px;outline:none}.text h2 input:hover{border-color:var(--line)}.text h2 input:focus{border-color:var(--accent);background:#fffdf7;box-shadow:0 0 0 3px #f5dfc1}.meta{margin:6px 0 24px;color:var(--muted);font-size:13px}.line{min-height:27px;white-space:pre-wrap;font:14px/1.65 ui-monospace,SFMono-Regular,Menlo,monospace;padding:1px 8px;border-radius:5px}.line.q{background:#fff3d9;margin:4px 0;padding:7px 8px;border-left:3px solid var(--accent)}textarea{display:block;resize:vertical;width:100%;min-height:40px;border:1px solid #d8b786;border-radius:5px;background:#fffdf7;color:var(--ink);font:inherit;line-height:1.6;padding:5px 7px;outline:none}textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px #f5dfc1}.tools{display:flex;align-items:center;gap:7px;margin-top:6px}.hint{font-size:12px;color:var(--muted);margin-right:auto}.tools button{font:inherit;font-size:12px;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:5px;padding:3px 7px;cursor:pointer}.tools button:hover{border-color:var(--accent)}.saved{color:var(--success);font-size:12px}.error{color:var(--danger);font-size:12px}.empty{padding:44px;color:var(--muted);text-align:center}@media(max-width:900px){header{padding:0 14px}main{grid-template-columns:190px 1fr;grid-template-rows:44vh auto;height:auto;min-height:calc(100vh - 64px)}.photo{grid-column:1/3}.text{padding:20px}.line{font-size:13px}}@media(max-width:620px){main{display:block}nav{max-height:180px}.photo{height:42vh}.text{min-height:55vh}}
+:root{--bg:#f4f0e8;--surface:#fffdf9;--ink:#29251f;--muted:#766f63;--line:#ded5c7;--accent:#9c542c;--accent-soft:#f8e5cf;--success:#296244;--success-soft:#e3efe7;--danger:#a83f35;--photo:#25211d;--q:#fff3d9}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{background:var(--bg);color:var(--ink);font:16px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,sans-serif;-webkit-text-size-adjust:100%}
+button{font:inherit;color:inherit;cursor:pointer}
+header{display:flex;align-items:center;gap:14px;padding:10px 20px;border-bottom:1px solid var(--line);background:var(--surface);min-height:60px}
+h1{font-size:17px;margin:0;white-space:nowrap}
+.progress{flex:1;max-width:320px;height:8px;background:#e7dfd3;border-radius:99px;overflow:hidden}
+.progress i{display:block;height:100%;background:var(--success);transition:width .2s}
+.count{color:var(--muted);font-size:14px;font-variant-numeric:tabular-nums}
+.menu-btn{display:none;border:1px solid var(--line);background:#fff;border-radius:8px;padding:6px 10px}
+main{display:grid;grid-template-columns:270px minmax(300px,1fr) minmax(420px,1.1fr);height:calc(100dvh - 61px)}
+nav{display:flex;flex-direction:column;border-right:1px solid var(--line);background:#faf7f1;min-height:0}
+.tools-top{padding:12px 10px 8px;border-bottom:1px solid var(--line);display:grid;gap:8px}
+.search{width:100%;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font:inherit;font-size:15px;background:#fff}
+.filters{display:flex;gap:6px;flex-wrap:wrap}
+.chip{border:1px solid var(--line);background:#fff;border-radius:99px;padding:3px 10px;font-size:13px}
+.chip.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.list{overflow:auto;padding:6px 8px 20px;flex:1}
+.section{color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.08em;margin:16px 8px 2px;text-transform:uppercase}
+.groupname{color:var(--muted);font-size:12px;margin:6px 8px 2px}
+.recipe{display:flex;gap:8px;align-items:flex-start;width:100%;text-align:left;border:0;border-radius:8px;background:transparent;padding:7px 8px}
+.recipe:hover{background:#f1e9dd}
+.recipe.active{background:var(--accent-soft);color:#703313}
+.recipe .mark{flex:none;width:18px;color:var(--success);font-weight:700}
+.recipe small{display:block;color:var(--muted);font-size:12px}
+.recipe .qn{color:var(--accent)}
+.photo{position:relative;background:var(--photo);overflow:auto;display:flex;flex-direction:column;gap:2px}
+.photo a{display:block}
+.photo img{display:block;width:100%;height:auto}
+.photo .tip{position:sticky;top:0;align-self:flex-end;margin:8px;background:rgba(0,0,0,.55);color:#fff;font-size:12px;padding:3px 8px;border-radius:99px;z-index:1}
+.photo .missing{color:#d6cfc5;text-align:center;padding:30px}
+.text{display:flex;flex-direction:column;min-height:0;background:var(--surface)}
+.scroll{flex:1;overflow:auto;padding:26px 34px 30px}
+.crumb{color:var(--muted);font-size:13px;margin-bottom:4px}
+.text h2{font-size:25px;line-height:1.2;margin:0 0 4px;display:flex;align-items:baseline;gap:8px}
+.text h2 input{flex:1;min-width:0;font:inherit;color:inherit;border:1px solid transparent;border-radius:6px;background:transparent;padding:2px 6px;margin-left:-6px;outline:none}
+.text h2 input:hover{border-color:var(--line)}
+.text h2 input:focus{border-color:var(--accent);background:#fffdf7;box-shadow:0 0 0 3px #f5dfc1}
+.meta{color:var(--muted);font-size:12px;margin-bottom:18px;word-break:break-all}
+.body h3{font-size:17px;margin:20px 0 6px}
+.body p{margin:6px 0}
+.body ul,.body ol{margin:4px 0 4px;padding-left:24px}
+.body li{margin:2px 0}
+.body .note{color:var(--muted);font-style:italic}
+.q{background:var(--q);margin:8px 0;padding:8px 10px;border-left:3px solid var(--accent);border-radius:6px;list-style:none}
+.q .hintline{font-size:13px;color:#7a4a1f;margin-bottom:4px}
+textarea{display:block;resize:vertical;width:100%;min-height:44px;border:1px solid #d8b786;border-radius:6px;background:#fffdf7;color:var(--ink);font:inherit;line-height:1.5;padding:6px 8px;outline:none}
+textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px #f5dfc1}
+.qtools{display:flex;align-items:center;gap:6px;margin-top:6px;flex-wrap:wrap}
+.qtools .hint{font-size:12px;color:var(--muted);margin-right:auto}
+.qtools button{font-size:13px;border:1px solid var(--line);background:#fff;border-radius:6px;padding:4px 9px}
+.saved{color:var(--success);font-size:12px}.error{color:var(--danger);font-size:12px}
+.bar{display:flex;gap:8px;align-items:center;padding:12px 34px calc(12px + env(safe-area-inset-bottom));border-top:1px solid var(--line);background:var(--surface)}
+.bar button{border:1px solid var(--line);background:#fff;border-radius:10px;padding:10px 14px;font-size:15px}
+.bar .read{flex:1;background:var(--success);border-color:var(--success);color:#fff;font-weight:600}
+.bar .read.done{background:var(--success-soft);color:var(--success)}
+.bar button:disabled{opacity:.4;cursor:default}
+.empty{padding:44px;color:var(--muted);text-align:center}
+.backdrop{display:none}
+@media(max-width:1000px){
+  main{grid-template-columns:240px 1fr;grid-template-rows:auto 1fr}
+  nav{grid-row:1/3}
+  .photo{max-height:45dvh}
+}
+@media(max-width:700px){
+  header{padding:8px 12px;gap:10px;flex-wrap:wrap}
+  h1{font-size:16px}
+  .menu-btn{display:block}
+  .progress{order:3;flex-basis:100%;max-width:none;height:6px}
+  main{display:block;height:auto}
+  nav{position:fixed;inset:0 20% 0 0;z-index:20;transform:translateX(-105%);transition:transform .2s;box-shadow:0 0 30px rgba(0,0,0,.25)}
+  body.menu nav{transform:none}
+  body.menu .backdrop{display:block;position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:19}
+  .photo{max-height:none}
+  .photo.collapsed img{max-height:38dvh;object-fit:cover;object-position:top}
+  .text{display:block}
+  .scroll{padding:18px 16px 110px;overflow:visible}
+  .bar{position:fixed;left:0;right:0;bottom:0;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:var(--surface);border-top:1px solid var(--line);z-index:10}
+  .bar button{padding:10px 12px}
+}
 </style>
 </head>
 <body>
-<header><h1>Вичитка рецептів</h1><div class="progress"><i id="bar"></i></div><span class="count" id="count"></span></header>
-<main><nav id="nav"></nav><section class="photo" id="photo"></section><article class="text" id="text"></article></main>
+<header>
+  <button class="menu-btn" id="menu" aria-label="Список рецептів">☰ Список</button>
+  <h1>Мамині рецепти</h1>
+  <div class="progress" title="Скільки рецептів уже перечитано"><i id="bar"></i></div>
+  <span class="count" id="count"></span>
+</header>
+<div class="backdrop" id="backdrop"></div>
+<main>
+  <nav>
+    <div class="tools-top">
+      <input class="search" id="search" type="search" placeholder="Пошук: назва, номер, продукт…">
+      <div class="filters" id="filters">
+        <button class="chip on" data-f="all">Усі</button>
+        <button class="chip" data-f="unread">Не прочитані</button>
+        <button class="chip" data-f="q">З питаннями</button>
+      </div>
+    </div>
+    <div class="list" id="list"></div>
+  </nav>
+  <section class="photo" id="photo"></section>
+  <article class="text" id="text"></article>
+</main>
 <script>
-let recipes=[],index=0;const $=id=>document.getElementById(id);const esc=value=>String(value).replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
-async function load(){const data=await fetch('/api/recipes').then(r=>r.json());recipes=data.recipes;if(index>=recipes.length)index=Math.max(0,recipes.length-1);render()}
-function render(){const total=recipes.reduce((sum,recipe)=>sum+recipe.body.reduce((n,line)=>n+(line.questions?.length||0),0),0),complete=recipes.filter(recipe=>recipe.body.every(line=>!line.questions?.length)).length;$('count').textContent=`${recipes.length} рецептів · ${total} відкритих фрагм.`;$('bar').style.width=recipes.length?`${100*complete/recipes.length}%`:'0%';let category='';$('nav').innerHTML=recipes.map((recipe,i)=>{const head=recipe.category!==category?(category=recipe.category,`<div class="group">${esc(category)}</div>`):'';const questions=recipe.body.reduce((n,line)=>n+(line.questions?.length||0),0);return `${head}<button class="recipe ${i===index?'active':''}" data-index="${i}">${esc(recipe.id)}. ${esc(recipe.title)}<small>${questions?`${questions} фрагм.`:'перевірено'}</small></button>`}).join('')||'<div class="empty">Рецептів немає.</div>';$('nav').querySelectorAll('[data-index]').forEach(button=>button.onclick=()=>{index=+button.dataset.index;render()});const recipe=recipes[index];if(!recipe){$('photo').innerHTML='';$('text').innerHTML='<div class="empty">Рецептів немає.</div>';return}$('photo').innerHTML=recipe.images[0]?`<img src="/photos/${encodeURIComponent(recipe.images[0])}" alt="Фото рецепта" onerror="this.outerHTML='<div class=missing>Фото не знайдено</div>'">`:'<div class="missing">Для цього рецепта немає фото</div>';$('text').innerHTML=`<h2><span>${esc(recipe.id)}.</span><input id="title" value="${esc(recipe.title)}" data-file="${esc(recipe.file)}" maxlength="200" aria-label="Назва рецепта" title="Клацніть, щоб змінити назву"></h2><div class="meta">${esc(recipe.file)} · назву й текст можна змінити, зміни зберігаються одразу <span class="saved" id="title-status"></span></div>${recipe.body.map(line=>line.questions?.length?questionLine(line):`<div class="line">${esc(line.text)||' '}</div>`).join('')}`}
-function showLine(question){return question.original.replace(/<!--\s*\?\?(.*?)-->/g,(_,hint)=>`[${hint.trim()||'?'}]`)}
-function questionLine(line){const question=line.questions[0],value=showLine(question);return `<div class="line q"><textarea data-qid="${question.qid}" aria-label="${question.qid}">${esc(value)}</textarea><div class="tools"><span class="hint">${esc(question.qid)} · змініть текст у [дужках] або весь рядок</span><button data-answer="ОК">ОК</button><button data-answer="НЕ ВДАЛОСЯ ПРОЧИТАТИ">Не прочитати</button><button data-answer="ВИДАЛИТИ">Видалити</button><span class="saved"></span></div></div>`}
-async function save(qid,value,status){status.textContent='Збереження…';status.className='saved';try{const response=await fetch('/api/answer',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({qid,value})});const data=await response.json();if(!response.ok)throw Error(data.error||'Не вдалося зберегти');status.textContent='Збережено';if(data.saved){recipes=data.recipes;render()}}catch(error){status.textContent=error.message;status.className='error'}}
-async function saveTitle(input){const recipe=recipes[index],status=$('title-status'),title=input.value.trim();if(!recipe||title===recipe.title)return;if(!title){input.value=recipe.title;status.textContent='Назва не може бути порожньою';status.className='error';return}status.textContent='Збереження…';status.className='saved';try{const response=await fetch('/api/title',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({file:input.dataset.file,title})});const data=await response.json();if(!response.ok)throw Error(data.error||'Не вдалося зберегти');recipes=data.recipes;index=Math.max(0,recipes.findIndex(item=>item.file===input.dataset.file));render();$('title-status').textContent='Назву збережено'}catch(error){status.textContent=error.message;status.className='error'}}
-$('text').addEventListener('blur',event=>{if(event.target.id==='title')saveTitle(event.target)},true);$('text').addEventListener('keydown',event=>{if(event.target.id!=='title')return;if(event.key==='Enter'){event.preventDefault();event.target.blur()}if(event.key==='Escape'){event.target.value=recipes[index].title;event.target.blur()}});
-$('text').addEventListener('blur',event=>{if(event.target.matches('textarea')){const status=event.target.closest('.q').querySelector('.saved');save(event.target.dataset.qid,event.target.value,status)}},true);$('text').addEventListener('keydown',event=>{if(event.target.matches('textarea')&&event.key==='Enter'&&(event.ctrlKey||event.metaKey)){event.preventDefault();event.target.blur()}});$('text').addEventListener('click',event=>{const button=event.target.closest('[data-answer]');if(!button)return;const area=button.closest('.q').querySelector('textarea');area.value=button.dataset.answer;area.blur()});load();
+let recipes=[],index=0,filter='all',query='';
+const $=id=>document.getElementById(id);
+const esc=v=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const qcount=r=>r.body.reduce((n,l)=>n+(l.questions?.length||0),0);
+const narrow=()=>matchMedia('(max-width:700px)').matches;
+
+async function load(){
+  const data=await fetch('/api/recipes').then(r=>r.json());
+  const keep=recipes[index]?.id||location.hash.slice(1);
+  recipes=data.recipes;
+  const i=recipes.findIndex(r=>r.id===keep);
+  index=i>=0?i:0;
+  render();
+}
+function visible(r){
+  if(filter==='unread'&&r.read)return false;
+  if(filter==='q'&&!qcount(r))return false;
+  if(!query)return true;
+  const hay=(r.id+' '+r.title+' '+r.group+' '+r.body.map(l=>l.text).join(' ')).toLowerCase();
+  return query.split(/\s+/).every(w=>hay.includes(w));
+}
+function renderList(){
+  const read=recipes.filter(r=>r.read).length,total=recipes.reduce((n,r)=>n+qcount(r),0);
+  $('count').textContent=`прочитано ${read} з ${recipes.length} · питань ${total}`;
+  $('bar').style.width=recipes.length?`${100*read/recipes.length}%`:'0%';
+  let sec='',grp='',html='';
+  recipes.forEach((r,i)=>{
+    if(!visible(r))return;
+    if(r.category!==sec){sec=r.category;grp='';html+=`<div class="section">${esc(sec)}</div>`}
+    if(r.group!==grp){grp=r.group;html+=`<div class="groupname">${esc(grp)}</div>`}
+    const n=qcount(r);
+    html+=`<button class="recipe ${i===index?'active':''}" data-index="${i}"><span class="mark">${r.read?'✓':''}</span><span>${esc(r.id)}. ${esc(r.title)}${n?`<small class="qn">❓ ${n}</small>`:''}</span></button>`;
+  });
+  $('list').innerHTML=html||'<div class="empty">Нічого не знайдено.</div>';
+  $('list').querySelectorAll('[data-index]').forEach(b=>b.onclick=()=>go(+b.dataset.index));
+}
+function inline(s){
+  return esc(s).replace(/_(.+?)_/g,'<em>$1</em>').replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>');
+}
+function renderBody(r){
+  let out='',list=null;
+  const close=()=>{if(list){out+=`</${list}>`;list=null}};
+  const open=t=>{if(list!==t){close();out+=`<${t}>`;list=t}};
+  for(const line of r.body){
+    if(line.questions?.length){if(!list)open('ul');out+=questionLine(line);continue}
+    const t=line.text.replace(/<!--(?!\s*\?\?).*?-->/g,'').trimEnd();
+    if(!t.trim()){close();continue}
+    let m;
+    if(m=t.match(/^#{1,6}\s+(.*)/)){close();out+=`<h3>${inline(m[1])}</h3>`}
+    else if(m=t.match(/^\s*[-*]\s+(.*)/)){open('ul');out+=`<li>${inline(m[1])}</li>`}
+    else if(m=t.match(/^\s*\d+\.\s+(.*)/)){open('ol');out+=`<li>${inline(m[1])}</li>`}
+    else{close();out+=`<p class="${/^_.*_$/.test(t)?'note':''}">${inline(t)}</p>`}
+  }
+  close();
+  return out;
+}
+function showLine(q){return q.original.replace(/<!--\s*\?\?(.*?)-->/g,(_,h)=>`[${h.trim()||'?'}]`)}
+function questionLine(line){
+  const q=line.questions[0],hints=(q.original.match(/<!--\s*\?\?(.*?)-->/g)||[]).map(h=>h.replace(/<!--\s*\?\?|-->/g,'').trim()).filter(Boolean);
+  return `<li class="q"><div class="hintline">❓ ${esc(hints.join(' · ')||'нечітке місце')}</div><textarea data-qid="${q.qid}" aria-label="${q.qid}">${esc(showLine(q))}</textarea><div class="qtools"><span class="hint">виправ текст у [дужках] або весь рядок</span><button data-answer="ОК">ОК, так і є</button><button data-answer="НЕ ВДАЛОСЯ ПРОЧИТАТИ">Не прочитати</button><button data-answer="ВИДАЛИТИ">Видалити рядок</button><span class="saved"></span></div></li>`;
+}
+function render(){
+  renderList();
+  const r=recipes[index];
+  if(!r){$('photo').innerHTML='';$('text').innerHTML='<div class="empty">Рецептів немає.</div>';return}
+  history.replaceState(null,'','#'+r.id);
+  $('photo').className='photo'+(narrow()?' collapsed':'');
+  $('photo').innerHTML=r.images.length?`<span class="tip">${narrow()?'торкнись фото — відкриється повністю':'клік — фото на весь екран'}</span>`+r.images.map(img=>`<a href="/photos/${encodeURIComponent(img)}" target="_blank" rel="noopener"><img src="/photos/${encodeURIComponent(img)}" alt="${esc(img)}" loading="lazy" onerror="this.outerHTML='<div class=missing>Фото не знайдено</div>'"></a>`).join(''):'<div class="missing">Для цього рецепта немає фото</div>';
+  const n=qcount(r);
+  $('text').innerHTML=`<div class="scroll" id="scroll"><div class="crumb">${esc(r.category)} → ${esc(r.group)}</div>
+  <h2><span>${esc(r.id)}.</span><input id="title" value="${esc(r.title)}" data-file="${esc(r.file)}" maxlength="200" aria-label="Назва рецепта" title="Клацніть, щоб змінити назву"></h2>
+  <div class="meta">${esc(r.images.join(', '))}${n?` · нечітких місць: ${n}`:''} <span class="saved" id="title-status"></span></div>
+  <div class="body">${renderBody(r)}</div></div>
+  <div class="bar"><button id="prev" aria-label="Попередній">←</button><button class="read ${r.read?'done':''}" id="read">${r.read?'✓ Прочитано':'Прочитано → далі'}</button><button id="next" aria-label="Наступний">→</button></div>`;
+  $('prev').disabled=index===0;$('next').disabled=index===recipes.length-1;
+  $('prev').onclick=()=>go(index-1);$('next').onclick=()=>go(index+1);
+  $('read').onclick=toggleRead;
+  const active=$('list').querySelector('.active');active?.scrollIntoView({block:'nearest'});
+}
+function go(i){
+  if(i<0||i>=recipes.length)return;
+  index=i;document.body.classList.remove('menu');render();
+  $('scroll')&&($('scroll').scrollTop=0);$('photo').scrollTop=0;if(narrow())window.scrollTo(0,0);
+}
+async function toggleRead(){
+  const r=recipes[index],value=!r.read;
+  try{
+    const res=await fetch('/api/read',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:r.id,read:value})});
+    if(!res.ok)throw Error();
+    r.read=value;
+    if(value&&index<recipes.length-1)go(index+1);else render();
+  }catch{$('title-status').textContent='Не вдалося зберегти позначку';$('title-status').className='error'}
+}
+async function save(qid,value,status){
+  status.textContent='Збереження…';status.className='saved';
+  try{
+    const res=await fetch('/api/answer',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({qid,value})});
+    const data=await res.json();
+    if(!res.ok)throw Error(data.error||'Не вдалося зберегти');
+    status.textContent='Збережено';
+    if(data.saved){const id=recipes[index].id;recipes=data.recipes;index=Math.max(0,recipes.findIndex(r=>r.id===id));render()}
+  }catch(e){status.textContent=e.message;status.className='error'}
+}
+async function saveTitle(input){
+  const r=recipes[index],status=$('title-status'),title=input.value.trim();
+  if(!r||title===r.title)return;
+  if(!title){input.value=r.title;status.textContent='Назва не може бути порожньою';status.className='error';return}
+  status.textContent='Збереження…';status.className='saved';
+  try{
+    const res=await fetch('/api/title',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({file:input.dataset.file,title})});
+    const data=await res.json();
+    if(!res.ok)throw Error(data.error||'Не вдалося зберегти');
+    recipes=data.recipes;index=Math.max(0,recipes.findIndex(x=>x.id===r.id));render();$('title-status').textContent='Назву збережено';
+  }catch(e){status.textContent=e.message;status.className='error'}
+}
+const text=$('text');
+text.addEventListener('blur',e=>{
+  if(e.target.id==='title')saveTitle(e.target);
+  if(e.target.matches('textarea'))save(e.target.dataset.qid,e.target.value,e.target.closest('.q').querySelector('.saved'));
+},true);
+text.addEventListener('keydown',e=>{
+  if(e.target.id==='title'){
+    if(e.key==='Enter'){e.preventDefault();e.target.blur()}
+    if(e.key==='Escape'){e.target.value=recipes[index].title;e.target.blur()}
+  }
+  if(e.target.matches('textarea')&&e.key==='Enter'&&(e.ctrlKey||e.metaKey)){e.preventDefault();e.target.blur()}
+});
+text.addEventListener('click',e=>{
+  const b=e.target.closest('[data-answer]');if(!b)return;
+  const area=b.closest('.q').querySelector('textarea');area.value=b.dataset.answer;area.blur();
+});
+document.addEventListener('keydown',e=>{
+  if(e.target.matches('input,textarea'))return;
+  if(e.key==='ArrowLeft')go(index-1);
+  if(e.key==='ArrowRight')go(index+1);
+});
+$('search').oninput=e=>{query=e.target.value.trim().toLowerCase();renderList()};
+$('filters').onclick=e=>{
+  const c=e.target.closest('[data-f]');if(!c)return;
+  filter=c.dataset.f;$('filters').querySelectorAll('.chip').forEach(x=>x.classList.toggle('on',x===c));renderList();
+};
+$('menu').onclick=()=>document.body.classList.toggle('menu');
+$('backdrop').onclick=()=>document.body.classList.remove('menu');
+load();
 </script>
 </body>
 </html>

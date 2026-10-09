@@ -4,6 +4,7 @@ import re
 import socket
 import subprocess
 import sys
+import threading
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
@@ -14,10 +15,27 @@ from common import MARKER_RE, ROOT, clean_line, load_registry, parse_front, reci
 
 PAGE = Path(__file__).with_name("live_review.html")
 ANSWER_FILE = Path(__file__).with_name(".live_answer.json")
+READ_FILE = Path(__file__).with_name("прочитано.json")  # id рецептів, які вже перечитано
+READ_LOCK = threading.Lock()
 TITLE_MAX_LENGTH = 200
 
 
+def load_read():
+    try:
+        return set(json.loads(READ_FILE.read_text(encoding="utf-8")))
+    except (FileNotFoundError, json.JSONDecodeError):
+        return set()
+
+
+def set_read(recipe_id, value):
+    with READ_LOCK:
+        read = load_read()
+        (read.add if value else read.discard)(recipe_id)
+        READ_FILE.write_text(json.dumps(sorted(read), ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+
+
 def recipe_data():
+    read = load_read()
     registry = load_registry()["questions"]
     questions = {qid: q for qid, q in registry.items() if q["status"] == "open"}
     by_file = {}
@@ -44,11 +62,17 @@ def recipe_data():
             "id": meta.get("id", ""),
             "title": meta.get("title", ""),
             "category": meta.get("category", ""),
+            "group": meta.get("group", ""),
+            "read": meta.get("id", "") in read,
             "images": meta.get("source_images", []),
             "file": rel,
             "body": body,
         })
-    return sorted(recipes, key=lambda recipe: (recipe["category"], recipe["id"]))
+    # порядок книги — як в index.md (розділ → група → рецепт)
+    index_md = ROOT / "index.md"
+    ids = re.findall(r"^- \*\*(\d+)\.", index_md.read_text(encoding="utf-8"), re.M) if index_md.exists() else []
+    position = {recipe_id: i for i, recipe_id in enumerate(ids)}
+    return sorted(recipes, key=lambda recipe: (position.get(recipe["id"], len(ids)), recipe["id"]))
 
 
 def visible_line(question):
@@ -117,12 +141,16 @@ class Handler(SimpleHTTPRequestHandler):
         super().do_GET()
 
     def do_POST(self):
-        if self.path not in ("/api/answer", "/api/title"):
+        if self.path not in ("/api/answer", "/api/title", "/api/read"):
             self.send_error(404)
             return
         try:
             length = int(self.headers.get("Content-Length", 0))
             request = json.loads(self.rfile.read(length))
+            if self.path == "/api/read":
+                set_read(str(request["id"]), bool(request["read"]))
+                self.respond({"saved": True})
+                return
             if self.path == "/api/title":
                 saved = rename_recipe(request["file"], request["title"])
                 self.respond({"saved": saved, "recipes": recipe_data()})
