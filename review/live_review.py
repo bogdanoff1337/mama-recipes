@@ -7,11 +7,13 @@ from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
+from apply_review import update_titles
 from common import MARKER_RE, ROOT, clean_line, load_registry, parse_front, recipe_files
 
 
 PAGE = Path(__file__).with_name("live_review.html")
 ANSWER_FILE = Path(__file__).with_name(".live_answer.json")
+TITLE_MAX_LENGTH = 200
 
 
 def recipe_data():
@@ -70,6 +72,36 @@ def answer_for(question, value):
     return value
 
 
+def normalized_title(value):
+    title = " ".join(str(value).split()).replace('"', "'")
+    if not title:
+        raise ValueError("Назва не може бути порожньою")
+    if len(title) > TITLE_MAX_LENGTH:
+        raise ValueError(f"Назва довша за {TITLE_MAX_LENGTH} символів")
+    return title
+
+
+def rename_recipe(rel, value):
+    paths = {path.relative_to(ROOT).as_posix(): path for path in recipe_files()}
+    if rel not in paths:
+        raise ValueError("Рецепт не знайдено")
+    title = normalized_title(value)
+    path = paths[rel]
+    lines = path.read_text(encoding="utf-8").split("\n")
+    front_end = next((i for i in range(1, len(lines)) if lines[i] == "---"), None)
+    title_index = next((i for i in range(1, front_end or 0) if lines[i].startswith("title:")), None)
+    if title_index is None:
+        raise ValueError("У рецепті немає поля title")
+    if lines[title_index] == f'title: "{title}"':
+        return False
+    lines[title_index] = f'title: "{title}"'
+    path.write_text("\n".join(lines), encoding="utf-8")
+    update_titles({rel: title})
+    subprocess.run([sys.executable, str(Path(__file__).with_name("build_review.py"))], cwd=ROOT, check=True,
+                   capture_output=True)
+    return True
+
+
 class Handler(SimpleHTTPRequestHandler):
     def do_GET(self):
         if self.path in ("/", "/index.html"):
@@ -84,12 +116,16 @@ class Handler(SimpleHTTPRequestHandler):
         super().do_GET()
 
     def do_POST(self):
-        if self.path != "/api/answer":
+        if self.path not in ("/api/answer", "/api/title"):
             self.send_error(404)
             return
         try:
             length = int(self.headers.get("Content-Length", 0))
             request = json.loads(self.rfile.read(length))
+            if self.path == "/api/title":
+                saved = rename_recipe(request["file"], request["title"])
+                self.respond({"saved": saved, "recipes": recipe_data()})
+                return
             qid = request["qid"]
             value = request["value"].strip()
             question = load_registry()["questions"].get(qid)
@@ -110,7 +146,9 @@ class Handler(SimpleHTTPRequestHandler):
             if result.returncode:
                 raise ValueError(result.stderr or result.stdout)
             self.respond({"saved": True, "recipes": recipe_data()})
-        except (KeyError, ValueError, json.JSONDecodeError) as error:
+        except KeyError as error:
+            self.respond({"error": f"Не вистачає поля {error}"}, 400)
+        except (ValueError, json.JSONDecodeError, subprocess.CalledProcessError) as error:
             self.respond({"error": str(error)}, 400)
 
     def respond(self, value, status=200):

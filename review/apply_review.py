@@ -129,7 +129,7 @@ def update_titles(changes: dict):
     for rel, title in changes.items():
         rid = re.search(r"/(\d{3})-", rel).group(1)
         t = re.sub(rf'(- id: "{rid}"\n(?:\s{{4}}.*\n)*?\s{{4}}title: )".*"', lambda m: m.group(1) + f'"{title}"', t)
-        it = re.sub(rf"\*\*{rid}\. .*?\*\*", f"**{rid}. {title}**", it)
+        it = re.sub(rf"\*\*{rid}\. .*?\*\*", lambda m: f"**{rid}. {title}**", it)
     man.write_text(t, encoding="utf-8")
     idx.write_text(it, encoding="utf-8")
 
