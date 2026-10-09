@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import json
 import re
+import socket
 import subprocess
 import sys
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
@@ -163,8 +164,22 @@ class Handler(SimpleHTTPRequestHandler):
         return
 
 
+def lan_ip():
+    with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
+        try:
+            s.connect(("10.255.255.255", 1))  # пакет не надсилається, лише вибір інтерфейсу
+            return s.getsockname()[0]
+        except OSError:
+            return "IP-цього-компʼютера"
+
+
 if __name__ == "__main__":
-    port = int(sys.argv[1]) if len(sys.argv) > 1 else 8765
-    server = ThreadingHTTPServer(("127.0.0.1", port), Handler)
+    # --lan: доступ з телефону в тій самій Wi-Fi (без пароля — лише вдома)
+    lan = "--lan" in sys.argv
+    args = [a for a in sys.argv[1:] if a != "--lan"]
+    port = int(args[0]) if args else 8765
+    server = ThreadingHTTPServer(("0.0.0.0" if lan else "127.0.0.1", port), Handler)
     print(f"Відкрийте http://127.0.0.1:{port}")
+    if lan:
+        print(f"З телефону (та сама Wi-Fi): http://{lan_ip()}:{port}")
     server.serve_forever()
