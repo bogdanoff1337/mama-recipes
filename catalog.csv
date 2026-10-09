@@ -16,9 +16,9 @@
 016,Помідори з морквинами,Консервація,Помідори,low,IMG_1650.jpg,B01-006,recipes/01-konservatsiya/pomidory/016-pomidory-z-morkvynamy.md
 017,Помідори червоні в банках,Консервація,Помідори,medium,IMG_1650.jpg,B01-003,recipes/01-konservatsiya/pomidory/017-pomidory-chervoni-v-bankakh.md
 018,Помідори — маринад на 3-літрову банку,Консервація,Помідори,high,IMG_1650.jpg,B01-004,recipes/01-konservatsiya/pomidory/018-pomidory-marynad-na-3-litrovu-banku.md
-019,Лічо,Консервація,Перець,high,IMG_1691.jpg,B05-003,recipes/01-konservatsiya/perets/019-licho.md
-020,Лічо-1,Консервація,Перець,medium,IMG_1691.jpg,B05-004,recipes/01-konservatsiya/perets/020-licho-1.md
-021,Лічо-2,Консервація,Перець,low,IMG_1691.jpg,B05-005,recipes/01-konservatsiya/perets/021-licho-2.md
+019,Торт «Мішка»,Випічка,Торти,high,IMG_1691.jpg,B05-003,recipes/07-vypichka/torty/019-tort-mishka.md
+020,Торт «Лебідь-1»,Випічка,Торти,medium,IMG_1691.jpg,B05-004,recipes/07-vypichka/torty/020-tort-lebid-1.md
+021,Торт «Лебідь-2»,Випічка,Торти,low,IMG_1691.jpg,B05-005,recipes/07-vypichka/torty/021-tort-lebid-2.md
 022,Перець — варіант 3,Консервація,Перець,high,IMG_1659.jpg,B02-001,recipes/01-konservatsiya/perets/022-perets-variant-3.md
 023,Перець — варіант на 1 л води,Консервація,Перець,high,IMG_1657.jpg,B01-025,recipes/01-konservatsiya/perets/023-perets-variant-na-1-l-vody.md
 024,Перець гіркий у олії,Консервація,Перець,medium,IMG_1667.jpg,B02-020,recipes/01-konservatsiya/perets/024-perets-hirkyy-u-oliyi.md
@@ -104,10 +104,10 @@
 105,Гостра приправа з перцю,Соуси та приправи,Гострі приправи,low,IMG_1669.jpg,B03-002,recipes/06-sousy-ta-prypravy/hostri-prypravy/105-hostra-pryprava-z-pertsyu.md
 106,Медовик,Випічка,Торти,low,IMG_1692.jpg,B05-009,recipes/07-vypichka/torty/106-medovyk.md
 107,Супер-торт «Колосок»,Випічка,Торти,medium,IMG_1700.jpg,B06-001,recipes/07-vypichka/torty/107-super-tort-kolosok.md
-108,Торт / крем із какао,Випічка,Торти,low,IMG_1701.jpg,B06-006,recipes/07-vypichka/torty/108-tort-krem-iz-kakao.md
+108,Рулет з медом,Випічка,Рулети,high,IMG_1701.jpg,B06-006,recipes/07-vypichka/rulety/108-rulet-z-medom.md
 109,Торт / кремовий десерт,Випічка,Торти,low,IMG_1698.jpg,B05-028,recipes/07-vypichka/torty/109-tort-kremovyy-desert.md
-110,Торт «Наполеон»,Випічка,Торти,medium,IMG_1701.jpg,B06-005,recipes/07-vypichka/torty/110-tort-napoleon.md
-112,Торт «Подарунок»,Випічка,Торти,medium,IMG_1701.jpg,B06-004,recipes/07-vypichka/torty/112-tort-podarunok.md
+110,Рулет (без назви),Випічка,Рулети,medium,IMG_1701.jpg,B06-005,recipes/07-vypichka/rulety/110-rulet-bez-nazvy.md
+112,Піца,Випічка,Пироги та кекси,high,IMG_1701.jpg,B06-004,recipes/07-vypichka/pyrohy-ta-keksy/112-pitsa.md
 113,Торт «Прага»,Випічка,Торти,medium,IMG_1704.jpg,B06-013,recipes/07-vypichka/torty/113-tort-praha.md
 115,Торт із сиром,Випічка,Торти,medium,IMG_1707.jpg,B06-020,recipes/07-vypichka/torty/115-tort-iz-syrom.md
 116,Зебра,Випічка,Пироги та кекси,high,IMG_1693.jpg,B05-010,recipes/07-vypichka/pyrohy-ta-keksy/116-zebra.md

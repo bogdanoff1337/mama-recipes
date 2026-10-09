@@ -1,5 +1,5 @@
 {
- "next": 428,
+ "next": 431,
  "questions": {
   "Q0001": {
    "file": "recipes/01-konservatsiya/ohirky/001-zelentsi-z-sousom.md",
@@ -2911,7 +2911,7 @@
   "Q0243": {
    "file": "recipes/07-vypichka/torty/108-tort-krem-iz-kakao.md",
    "original": "- какао — 20 г <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 17,
    "current": "- какао — 20 г",
    "hints": [
@@ -2923,7 +2923,7 @@
   "Q0244": {
    "file": "recipes/07-vypichka/torty/108-tort-krem-iz-kakao.md",
    "original": "- цукор — 300 г <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 18,
    "current": "- цукор — 300 г",
    "hints": [
@@ -2935,7 +2935,7 @@
   "Q0245": {
    "file": "recipes/07-vypichka/torty/108-tort-krem-iz-kakao.md",
    "original": "- молоко — 150 г <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 19,
    "current": "- молоко — 150 г",
    "hints": [
@@ -2959,7 +2959,7 @@
   "Q0247": {
    "file": "recipes/07-vypichka/torty/108-tort-krem-iz-kakao.md",
    "original": "Зварити / збити крем. <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 22,
    "current": "Зварити / збити крем.",
    "hints": [
@@ -3007,7 +3007,7 @@
   "Q0251": {
    "file": "recipes/07-vypichka/torty/110-tort-napoleon.md",
    "original": "- маргарин / масло — <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 18,
    "current": "- маргарин / масло —",
    "hints": [
@@ -3019,7 +3019,7 @@
   "Q0252": {
    "file": "recipes/07-vypichka/torty/110-tort-napoleon.md",
    "original": "- мука — <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 19,
    "current": "- мука —",
    "hints": [
@@ -3031,7 +3031,7 @@
   "Q0253": {
    "file": "recipes/07-vypichka/torty/110-tort-napoleon.md",
    "original": "- вода — <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 20,
    "current": "- вода —",
    "hints": [
@@ -3127,7 +3127,7 @@
   "Q0261": {
    "file": "recipes/07-vypichka/torty/112-tort-podarunok.md",
    "original": "- мука — <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 19,
    "current": "- мука —",
    "hints": [
@@ -3139,7 +3139,7 @@
   "Q0262": {
    "file": "recipes/07-vypichka/torty/112-tort-podarunok.md",
    "original": "- цукор — <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 20,
    "current": "- цукор —",
    "hints": [
@@ -3151,7 +3151,7 @@
   "Q0263": {
    "file": "recipes/07-vypichka/torty/112-tort-podarunok.md",
    "original": "- яйця — <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 21,
    "current": "- яйця —",
    "hints": [
@@ -3163,7 +3163,7 @@
   "Q0264": {
    "file": "recipes/07-vypichka/torty/112-tort-podarunok.md",
    "original": "- сода — <!-- ?? -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 22,
    "current": "- сода —",
    "hints": [
@@ -3175,7 +3175,7 @@
   "Q0265": {
    "file": "recipes/07-vypichka/torty/112-tort-podarunok.md",
    "original": "Замісити тісто. <!-- ?? точний спосіб -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 25,
    "current": "Замісити тісто.",
    "hints": [
@@ -4957,7 +4957,7 @@
   "Q0413": {
    "file": "recipes/01-konservatsiya/perets/021-licho-2.md",
    "original": "<!-- ?? Рецепт продовжується на наступній сторінці. -->",
-   "status": "open",
+   "status": "gone",
    "line_no": 22,
    "current": "",
    "hints": [
@@ -5133,6 +5133,42 @@
    ],
    "recipe_id": "145",
    "title": "Масляний крем"
+  },
+  "Q0428": {
+   "file": "recipes/07-vypichka/torty/110-tort-napoleon.md",
+   "original": "<!-- ?? Claude: назва — у блокноті без назви, під заголовком «Рулети» -->",
+   "status": "gone",
+   "line_no": 18,
+   "current": "",
+   "hints": [
+    "Claude: назва — у блокноті без назви, під заголовком «Рулети»"
+   ],
+   "recipe_id": "110",
+   "title": "Рулет (без назви)"
+  },
+  "Q0429": {
+   "file": "recipes/07-vypichka/torty/021-tort-lebid-2.md",
+   "original": "<!-- ?? Рецепт продовжується на наступній сторінці. -->",
+   "status": "open",
+   "line_no": 22,
+   "current": "",
+   "hints": [
+    "Рецепт продовжується на наступній сторінці."
+   ],
+   "recipe_id": "021",
+   "title": "Торт «Лебідь-2»"
+  },
+  "Q0430": {
+   "file": "recipes/07-vypichka/rulety/110-rulet-bez-nazvy.md",
+   "original": "<!-- ?? Claude: назва — у блокноті без назви, під заголовком «Рулети» -->",
+   "status": "open",
+   "line_no": 17,
+   "current": "",
+   "hints": [
+    "Claude: назва — у блокноті без назви, під заголовком «Рулети»"
+   ],
+   "recipe_id": "110",
+   "title": "Рулет (без назви)"
   }
  }
 }

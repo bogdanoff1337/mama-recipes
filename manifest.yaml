@@ -7,19 +7,19 @@ source_photo_range:
 sections:
   - title: "Консервація"
     order: 1
-    recipe_count: 54
+    recipe_count: 53
   - title: "Випічка"
     order: 2
-    recipe_count: 46
+    recipe_count: 44
   - title: "Салати"
     order: 3
-    recipe_count: 33
+    recipe_count: 32
   - title: "Основні страви"
     order: 4
     recipe_count: 4
   - title: "Соуси та приправи"
     order: 5
-    recipe_count: 6
+    recipe_count: 5
   - title: "Риба та морепродукти"
     order: 6
     recipe_count: 4
@@ -192,7 +192,7 @@ recipes:
     category: "Випічка"
     group: "Торти"
     confidence: "high"
-    file: "recipes/01-konservatsiya/perets/019-licho.md"
+    file: "recipes/07-vypichka/torty/019-tort-mishka.md"
     source_images:
       - "IMG_1691.jpg"
   - id: "020"
@@ -201,7 +201,7 @@ recipes:
     category: "Випічка"
     group: "Торти"
     confidence: "high"
-    file: "recipes/01-konservatsiya/perets/020-licho-1.md"
+    file: "recipes/07-vypichka/torty/020-tort-lebid-1.md"
     source_images:
       - "IMG_1691.jpg"
   - id: "021"
@@ -210,7 +210,7 @@ recipes:
     category: "Випічка"
     group: "Торти"
     confidence: "low"
-    file: "recipes/01-konservatsiya/perets/021-licho-2.md"
+    file: "recipes/07-vypichka/torty/021-tort-lebid-2.md"
     source_images:
       - "IMG_1691.jpg"
   - id: "022"
@@ -981,11 +981,11 @@ recipes:
       - "IMG_1700.jpg"
   - id: "108"
     legacy_id: "B06-006"
-    title: "Торт / крем із какао"
+    title: "Рулет з медом"
     category: "Випічка"
-    group: "Торти"
-    confidence: "low"
-    file: "recipes/07-vypichka/torty/108-tort-krem-iz-kakao.md"
+    group: "Рулети"
+    confidence: "high"
+    file: "recipes/07-vypichka/rulety/108-rulet-z-medom.md"
     source_images:
       - "IMG_1701.jpg"
   - id: "109"
@@ -999,20 +999,20 @@ recipes:
       - "IMG_1698.jpg"
   - id: "110"
     legacy_id: "B06-005"
-    title: "Торт «Наполеон»"
+    title: "Рулет (без назви)"
     category: "Випічка"
-    group: "Торти"
+    group: "Рулети"
     confidence: "medium"
-    file: "recipes/07-vypichka/torty/110-tort-napoleon.md"
+    file: "recipes/07-vypichka/rulety/110-rulet-bez-nazvy.md"
     source_images:
       - "IMG_1701.jpg"
   - id: "112"
     legacy_id: "B06-004"
-    title: "Торт «Подарунок»"
+    title: "Піца"
     category: "Випічка"
-    group: "Торти"
-    confidence: "medium"
-    file: "recipes/07-vypichka/torty/112-tort-podarunok.md"
+    group: "Пироги та кекси"
+    confidence: "high"
+    file: "recipes/07-vypichka/pyrohy-ta-keksy/112-pitsa.md"
     source_images:
       - "IMG_1701.jpg"
   - id: "113"
