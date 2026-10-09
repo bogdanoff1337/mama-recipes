@@ -5,7 +5,7 @@ title: "Салат з мойви"
 source_images:
   - "IMG_1666.jpg"
 category: "Салати"
-group: "Рибні страви"
+group: "Рибні салати"
 tags:
   - "мойва"
   - "салат"

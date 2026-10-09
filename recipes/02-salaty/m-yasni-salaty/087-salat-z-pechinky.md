@@ -5,7 +5,7 @@ title: "Салат з печінки"
 source_images:
   - "IMG_1688.jpg"
 category: "Салати"
-group: "Страви з печінки"
+group: "М'ясні салати"
 tags:
   - "печінка"
   - "морква"
